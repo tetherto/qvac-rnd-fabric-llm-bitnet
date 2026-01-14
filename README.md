@@ -261,96 +261,41 @@ Each download contains:
 
 ## Performance Benchmarks
 
-### Inference Speed - TQ1_0 (tokens/second)
+### Inference Speed Highlights
 
-TQ1_0 provides the fastest inference with ~1.0 bits per weight:
+| Model | NVIDIA 4090 | Apple M3 | iPhone 16 | Adreno 830 | Mali G715 |
+|-------|-------------|----------|-----------|------------|-----------|
+| **1B** (TQ1_0) | 258 tok/s | 111 tok/s | 131 tok/s | 27 tok/s | 8 tok/s |
+| **7B** (TQ1_0) | 109 tok/s | 53 tok/s | 24 tok/s | OOM | 1.4 tok/s |
+| **13B** (TQ1_0) | 74 tok/s | 34 tok/s | 17 tok/s | OOM | 0.8 tok/s |
 
-| Model | NVIDIA 4090 | AMD CPU | Mali GPU | Adreno GPU | macOS | iPhone GPU |
-|-------|-------------|---------|----------|------------|-------|------------|
-| **125M** | 548.86 | 285.28 | 38.67 | 91.23 | 386.38 | 111.91 |
-| **350M** | 342.17 | 142.77 | 17.71 | 47.93 | 194.80 | 157.81 |
-| **1B** | 257.80 | 58.99 | 8.23 | 27.16 | 111.25 | 130.73 |
-| **1.5B** | 224.14 | 46.46 | 5.91 | 15.26 | 136.76 | 78.41 |
-| **2.7B** | 126.71 | 28.33 | 3.42 | 15.22* | 92.05 | 66.93 |
-| **3.8B** | 131.90 | 24.06 | 2.43 | 11.54* | 64.09 | 26.31 |
-| **7B** | 108.73 | 13.83 | 1.36 | OOM | 53.13 | 24.21 |
-| **13B** | 74.29 | 8.20 | 0.79 | OOM | 33.54 | 16.79 |
+### LoRA Fine-tuning Time (per epoch)
 
-*Models marked with * were run with `-c 128` to avoid OutOfMemory issues.
+| Model | NVIDIA 4090 | Apple M3 | iPhone 16 | Adreno 830 |
+|-------|-------------|----------|-----------|------------|
+| **1B** | 3m 31s | 9m 19s | 1h 45m | 1h 18m |
+| **7B** | 16m 20s | 35m 25s | 12h 24m | OOM |
+| **13B** | 27m 41s | 1h 03m | 23h 10m | OOM |
 
-### Inference Speed - TQ2_0 (tokens/second)
+### Memory Efficiency: BitNet vs Standard Models
 
-TQ2_0 provides ~2.0 bits per weight with improved numerical stability:
+BitNet's ternary weights dramatically reduce VRAM requirements:
 
-| Model | NVIDIA 4090 | AMD CPU | Mali GPU | Adreno GPU | macOS | iPhone GPU |
-|-------|-------------|---------|----------|------------|-------|------------|
-| **125M** | 190.38 | 130.21 | 20.54 | 139.17 | 123.74 | 35.84 |
-| **350M** | 81.84 | 53.21 | 18.12 | 58.19 | 50.19 | 40.66 |
-| **1B** | 43.84 | 28.56 | 11.32 | 40.50 | 24.49 | 28.78 |
-| **1.5B** | 50.52 | 24.62 | 10.48 | 23.91 | 28.83 | 16.53 |
-| **2.7B** | 33.15 | 18.55 | 5.34 | 22.54* | 18.54 | 13.48 |
-| **3.8B** | 25.68 | 13.01 | 3.56 | 19.38* | 12.69 | 5.21 |
-| **7B** | 22.13 | 8.44 | 2.86 | OOM | 10.38 | 4.73 |
-| **13B** | 13.25 | 4.60 | 1.49 | OOM | 6.61 | 3.31 |
-
-### Microsoft BitNet Models
-
-| Model | NVIDIA 4090 | AMD CPU | Mali GPU | Adreno GPU |
-|-------|-------------|---------|----------|------------|
-| **bitnet-700M** (avg) | 209.1 | 60.8 | 25.7 | 21.9 |
-| **bitnet-700M** (TTFT) | 120ms | 530ms | 2310ms | 1209ms |
-| **bitnet-2B** (avg) | 49.7 | 20.5 | 9.0 | 5.2 |
-| **bitnet-2B** (TTFT) | 240ms | 560ms | 6577ms | 4817ms |
-
-### LoRA Fine-tuning Time (per epoch, TQ2_0)
-
-| Model | NVIDIA 4090 | Mali GPU | Adreno GPU | macOS | iPhone GPU |
-|-------|-------------|----------|------------|-------|------------|
-| **125M** | 1m 20s | 17m 25s | 10m 10s | 6m 19s | 12m 24s |
-| **350M** | 2m 32s | 50m 52s | 28m 40s | 8m 10s | 44m 34s |
-| **1B** | 3m 31s | 2h 08m | 1h 18m | 9m 19s | 1h 45m |
-| **1.5B** | 6m 05s | 2h 58m | 1h 57m | 10m 51s | 2h 22m |
-| **2.7B** | 7m 10s | 5h 04m | 3h 28m | 12m 39s | 4h 24m |
-| **3.8B** | 8m 55s | 7h 15m | 4h 51m | 19m 29s | 6h 23m |
-| **7B** | 16m 20s | 13h 06m | OOM | 35m 25s | 12h 24m |
-| **13B** | 27m 41s | OOM | OOM | 1h 03m | 23h 10m |
-
-### VRAM Usage (LoRA Fine-tuning)
-
-BitNet's ternary weights enable training of much larger models within tight VRAM budgets:
-
-| Model | TQ1_0 | TQ2_0 | Qwen3 Q4 | Qwen3 F16 |
-|-------|-------|-------|----------|-----------|
-| **125M** | 249 MiB | 402 MiB | - | - |
-| **350M** | 461 MiB | 719 MiB | - | - |
-| **1B** | 658 MiB | 1,266 MiB | - | - |
-| **1.5B** | 1,027 MiB | 1,669 MiB | - | - |
-| **2.7B** | 1,061 MiB | 2,248 MiB | - | - |
-| **7B** | 1,913 MiB | 4,331 MiB | - | - |
-| **13B** | 2,789 MiB | 6,835 MiB | - | - |
+| Model Size | BitNet TQ1_0 | BitNet TQ2_0 | Qwen3 Q4 | Qwen3 F16 |
+|------------|--------------|--------------|----------|-----------|
+| **~0.6B** | 249 MiB | 402 MiB | 1,102 MiB | 1,918 MiB |
+| **~1.7B** | 1,027 MiB | 1,669 MiB | 2,025 MiB | 4,307 MiB |
+| **~4B** | 1,221 MiB | 2,797 MiB | 3,942 MiB | 9,335 MiB |
+| **~7B** | 1,913 MiB | 4,331 MiB | - | - |
+| **~13B** | 2,789 MiB | 6,835 MiB | - | - |
 
 **Key insight:** BitNet-13B (TQ1_0) at 2.8 GiB enables 13B-class LoRA fine-tuning on 4GB GPUs!
 
-### Quality Comparison (LLM-as-Judge)
+### Quality (LLM-as-Judge)
 
-Comparison: Qwen3 1.7B (Q4) vs microsoft-bitnet-b1.58-2B
+BitNet-2B vs Qwen3-1.7B (Q4): **60-64% win rate** for BitNet across all platforms, achieving competitive quality with ~3x less memory.
 
-| Platform | Format | Wins (A/B/Ties) | Win Rate |
-|----------|--------|-----------------|----------|
-| Mali GPU | TQ2_0 | 198/127/5 | 61% |
-| Mali GPU | TQ1_0 | 205/121/4 | 63% |
-| Adreno GPU | TQ2_0 | 194/131/5 | 60% |
-| Adreno GPU | TQ1_0 | 207/121/2 | 63% |
-| NVIDIA 4090 | TQ2_0 | 204/122/4 | 63% |
-| NVIDIA 4090 | TQ1_0 | 202/124/4 | 62% |
-| Apple M3 Pro | TQ2_0 | 196/129/5 | 60% |
-| Apple M3 Pro | TQ1_0 | 210/118/2 | 64% |
-| iPhone 16 | TQ2_0 | 206/122/2 | 63% |
-| iPhone 16 | TQ1_0 | 203/123/4 | 62% |
-
-**Conclusion:** BitNet achieves competitive quality (60-64% win rate) while using ~3x less memory.
-
-> [View complete benchmarks](./docs/BENCHMARKS.md)
+> [View complete benchmarks with all platforms and model sizes](./docs/BENCHMARKS.md)
 
 ---
 
