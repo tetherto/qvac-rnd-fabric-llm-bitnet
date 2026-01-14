@@ -62,7 +62,7 @@ Pre-built binaries for BitNet b1.58 GPU inference and LoRA fine-tuning across al
 pkg update && pkg install wget unzip
 
 # Download and extract
-wget https://github.com/tetherto/qvac-fabric-bitnet/releases/download/v1.0/qvac-android-adreno-arm64-v1.0.zip
+wget https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-android-adreno-arm64-v1.0.zip
 unzip qvac-android-adreno-arm64-v1.0.zip
 cd qvac-android-adreno-arm64-v1.0
 
@@ -128,7 +128,7 @@ export LD_LIBRARY_PATH=.
 
 ```bash
 # Download
-curl -L https://github.com/tetherto/qvac-fabric-bitnet/releases/download/v1.0/qvac-macos-apple-silicon-v1.0.zip \
+curl -L https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-macos-apple-silicon-v1.0.zip \
   -o qvac-macos.zip
 
 # Extract
@@ -186,7 +186,7 @@ sudo apt install intel-media-va-driver mesa-vulkan-drivers
 
 ```bash
 # Download
-wget https://github.com/tetherto/qvac-fabric-bitnet/releases/download/v1.0/qvac-linux-vulkan-x64-v1.0.zip
+wget https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-linux-vulkan-x64-v1.0.zip
 
 # Extract
 unzip qvac-linux-vulkan-x64-v1.0.zip
@@ -281,8 +281,8 @@ cmake --build build -j$(nproc)
 
 ### Getting Help
 
-- [GitHub Issues](https://github.com/tetherto/qvac-fabric-bitnet/issues)
-- [Discussions](https://github.com/tetherto/qvac-fabric-bitnet/discussions)
+- [GitHub Issues](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/issues)
+- [Discussions](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/discussions)
 
 ---
 

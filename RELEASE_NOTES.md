@@ -136,10 +136,10 @@ First release - no upgrade path required.
 
 ### Links
 
-- [Main Repository](https://github.com/tetherto/qvac-fabric-bitnet)
+- [Main Repository](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune)
 - [Documentation](./README.md)
 - [Benchmarks](./docs/BENCHMARKS.md)
-- [Issue Tracker](https://github.com/tetherto/qvac-fabric-bitnet/issues)
+- [Issue Tracker](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/issues)
 
 ---
 

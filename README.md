@@ -155,7 +155,7 @@ python3 scripts/convert-bitnet-to-gguf.py \
 
 ```bash
 # Download pre-built binary
-wget https://github.com/tetherto/qvac-fabric-bitnet/releases/download/v1.0/qvac-android-adreno-arm64-v1.0.zip
+wget https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-android-adreno-arm64-v1.0.zip
 unzip qvac-android-adreno-arm64-v1.0.zip
 cd qvac-android-adreno-arm64-v1.0
 
@@ -184,7 +184,7 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
 
 ```bash
 # Download pre-built binary
-curl -L https://github.com/tetherto/qvac-fabric-bitnet/releases/download/v1.0/qvac-macos-apple-silicon-v1.0.zip \
+curl -L https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-macos-apple-silicon-v1.0.zip \
   -o qvac-macos.zip
 unzip qvac-macos.zip
 cd qvac-macos-apple-silicon-v1.0
@@ -211,7 +211,7 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
 
 ```bash
 # Download Vulkan binary
-wget https://github.com/tetherto/qvac-fabric-bitnet/releases/download/v1.0/qvac-linux-vulkan-x64-v1.0.zip
+wget https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-linux-vulkan-x64-v1.0.zip
 unzip qvac-linux-vulkan-x64-v1.0.zip
 cd qvac-linux-vulkan-x64-v1.0
 
@@ -566,10 +566,10 @@ This project is licensed under the Apache 2.0 License.
 
 ## Links
 
-- [Project Repository](https://github.com/tetherto/qvac-fabric-bitnet)
+- [Project Repository](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune)
 - [Release Downloads](./releases/)
-- [Discussion Forum](https://github.com/tetherto/qvac-fabric-bitnet/discussions)
-- [Issue Tracker](https://github.com/tetherto/qvac-fabric-bitnet/issues)
+- [Discussion Forum](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/discussions)
+- [Issue Tracker](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/issues)
 - [Full Documentation](./docs/)
 
 ---
