@@ -5,10 +5,10 @@
   <img src="https://img.shields.io/badge/Backends-Vulkan%20%7C%20Metal%20%7C%20CUDA-purple?style=for-the-badge"/>
 </p>
 
-<h1 align="center">Fast and Lossless BitNet b1.58 Inference on GPUs</h1>
+<h1 align="center">LoRA Fine-Tuning BitNet b1.58 LLMs on Heterogeneous Edge GPUs</h1>
 
 <div align="center">
-  <b>The first GPU backend for BitNet b1.58 with fully lossless ternary inference</b><br>
+  <b>The first GPU backend for BitNet b1.58 with ternary inference and LORA finetuning</b><br>
   <b>From smartphones to datacenters • Cross-platform Vulkan acceleration • On-device LoRA training</b>
 </div>
 
@@ -24,7 +24,7 @@
 
 ## What Makes This Different?
 
-**The Problem:** BitNet b1.58 introduced revolutionary 1.58-bit ternary weights, but inference was locked to CPUs via bitnet.cpp. GPUs remained untapped.
+**The Problem:** BitNet b1.58 introduced revolutionary 1.58-bit ternary weights, but inference was locked to CPUs via bitnet.cpp. GPUs remained untapped. Furthermore LORA finetuning was locked for edge devices.
 
 **Our Solution:** The first GPU backend for BitNet b1.58 that enables:
 
