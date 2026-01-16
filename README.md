@@ -47,7 +47,7 @@
 
 This repository contains the implementation and artifacts for our research:
 
-**["Fast and Lossless BitNet b1.58 Inference on GPUs"](https://huggingface.co/blog/qvac/bitnet-gpu-inference)**
+**["LoRA Fine-Tuning BitNet b1.58 LLMs on Heterogeneous Edge GPUs"](https://huggingface.co/blog/qvac/bitnet-gpu-inference)**
 
 ### Key Contributions
 
@@ -127,7 +127,7 @@ qvac-fabric-llm-bitnet-finetune/
 
 ```bash
 # 1. Clone the BitNet-enabled llama.cpp fork
-git clone https://github.com/tetherto/qvac-fabric-llm.cpp.git
+git clone https://github.com/tetherto/qvac-fabric-llm.cpp/tree/fabric-llm-finetune
 cd qvac-fabric-llm.cpp
 git checkout bitnet-gpu
 
