@@ -13,11 +13,11 @@
 </div>
 
 <p align="center">
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-downloads">Downloads</a> •
-  <a href="#-performance-benchmarks">Benchmarks</a> •
-  <a href="#-research-highlights">Research</a> •
-  <a href="#-usage-examples">Usage</a>
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#downloads">Downloads</a> •
+  <a href="#performance-benchmarks">Benchmarks</a> •
+  <a href="#research-highlights">Research</a> •
+  <a href="#usage-examples">Usage</a>
 </p>
 
 ---
@@ -73,8 +73,8 @@ This repository contains the implementation and artifacts for our research:
 | Task | Location |
 |------|----------|
 | Download binaries | `releases/[platform]/` |
-| Run inference | [Quick Start](#-quick-start) |
-| Fine-tune with LoRA | [Usage Examples](#-usage-examples) |
+| Run inference | [Quick Start](#quick-start) |
+| Fine-tune with LoRA | [Usage Examples](#usage-examples) |
 | View benchmarks | [docs/BENCHMARKS.md](./docs/BENCHMARKS.md) |
 | Evaluation scripts | [evaluations/scripts/](./evaluations/scripts/) |
 | Experiment reports | [evaluations/reports/](./evaluations/reports/) |
@@ -482,8 +482,8 @@ Our Vulkan kernels preserve bit-exact equivalence with CPU reference:
 ## Documentation
 
 ### Getting Started
-- [Quick Start](#-quick-start)
-- [Downloads](#-downloads)
+- [Quick Start](#quick-start)
+- [Downloads](#downloads)
 - [Platform Guides](./releases/)
 
 ### Benchmarks & Evaluation
