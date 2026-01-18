@@ -536,7 +536,7 @@ If you use this work in your research, please cite:
 
 ```bibtex
 @article{bitnet-gpu-2025,
-  title={Fast and Lossless BitNet b1.58 Inference on GPUs},
+  title={LoRA Fine-Tuning BitNet b1.58 LLMs on Heterogeneous Edge GPUs},
   author={Tether Data Team},
   journal={arXiv preprint},
   year={2025},
