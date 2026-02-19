@@ -47,7 +47,7 @@
 
 This repository contains the implementation and artifacts for our research:
 
-**["LoRA Fine-Tuning BitNet b1.58 LLMs on Heterogeneous Edge GPUs"](https://huggingface.co/blog/qvac/bitnet-gpu-inference)**
+**["LoRA Fine-Tuning BitNet b1.58 LLMs on Heterogeneous Edge GPUs"](https://huggingface.co/blog/qvac/fabric-llm-finetune-bitnet)**
 
 ### Key Contributions
 
