@@ -2,17 +2,25 @@
 
 Pre-built binaries for BitNet b1.58 GPU inference and LoRA fine-tuning across all supported platforms.
 
+**Download from:** [GitHub Releases (b7334)](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334)
+
 ---
 
 ## Platform Overview
 
-| Platform | Architecture | Backend | Status | Recommended Models |
-|----------|--------------|---------|--------|-------------------|
-| [Android](#android) | ARM64 (Adreno/Mali) | Vulkan | Available | Up to 3.8B |
-| [iOS](#ios) | ARM64 (Apple A-series) | Metal | Available | Up to 7B |
-| [macOS](#macos) | ARM64 (Apple Silicon) | Metal | Available | Up to 13B |
-| [Linux](#linux) | x64/ARM64 | Vulkan/SYCL | Available | Up to 13B+ |
-| Windows | x64 | Vulkan | Coming Soon | Up to 13B+ |
+| Platform | Architecture | Backend | Artifact |
+|----------|--------------|---------|----------|
+| Android | ARM64 (Adreno/Mali) | Vulkan | `llama-b7334-bin-android.zip` |
+| iOS | ARM64 (Apple A-series) | Metal | `llama-b7334-xcframework.zip` |
+| macOS | ARM64 (Apple Silicon) | Metal | `llama-b7334-bin-macos-arm64.zip` |
+| macOS | x64 (Intel) | Metal | `llama-b7334-bin-macos-x64.zip` |
+| Linux | x64 | CPU | `llama-b7334-bin-ubuntu-x64.zip` |
+| Linux | x64 | Vulkan | `llama-b7334-bin-ubuntu-x64-vulkan.zip` |
+| Windows | x64 | CPU | `llama-b7334-bin-win-x64.zip` |
+| Windows | ARM64 | CPU | `llama-b7334-bin-win-arm64.zip` |
+| Windows | x64 | Vulkan | `llama-b7334-bin-win-vulkan-x64.zip` |
+| Windows | x64 | SYCL (Intel) | `llama-b7334-bin-win-sycl-x64.zip` |
+| Windows | x64 | HIP (AMD) | `llama-b7334-bin-win-hip-x64.zip` |
 
 ---
 
@@ -39,32 +47,18 @@ Pre-built binaries for BitNet b1.58 GPU inference and LoRA fine-tuning across al
 
 ---
 
-## Android
+## Download & Installation
 
-### Builds Available
-
-| Build | GPU Support | Download |
-|-------|-------------|----------|
-| `qvac-android-adreno-arm64-v1.0.zip` | Qualcomm Adreno | [Download](./android/) |
-| `qvac-android-mali-arm64-v1.0.zip` | ARM Mali | [Download](./android/) |
-
-### Requirements
-
-- Android 10+ (API 29+)
-- Vulkan 1.1 support
-- Termux app installed
-- 4GB+ RAM recommended
-
-### Installation
+### Android (Termux)
 
 ```bash
 # In Termux
 pkg update && pkg install wget unzip
 
-# Download and extract
-wget https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-android-adreno-arm64-v1.0.zip
-unzip qvac-android-adreno-arm64-v1.0.zip
-cd qvac-android-adreno-arm64-v1.0
+# Download from GitHub Releases
+wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7334/llama-b7334-bin-android.zip
+unzip llama-b7334-bin-android.zip
+cd llama-b7334-bin-android
 
 # Set library path (required)
 export LD_LIBRARY_PATH=.
@@ -73,67 +67,26 @@ export LD_LIBRARY_PATH=.
 ./bin/llama-cli --version
 ```
 
-### Performance Notes
+**Requirements:**
+- Android 10+ (API 29+)
+- Vulkan 1.1 support
+- Termux app installed
+- 4GB+ RAM recommended
 
+**Performance Notes:**
 - **Adreno 830 (S25):** 15-140 tok/s depending on model size
 - **Mali G715 (Pixel 9):** 0.8-38 tok/s depending on model size
 - Models > 3.8B may require reduced context length (`-c 128`)
 
-**[Full Android Guide](./android/README.md)**
-
 ---
 
-## iOS
-
-### Builds Available
-
-| Build | GPU Support | Download |
-|-------|-------------|----------|
-| `qvac-ios-v1.0.zip` | Apple A-series (Metal) | [Download](./ios/) |
-
-### Requirements
-
-- iOS 16+
-- iPhone 12 or newer recommended
-- A14 Bionic or newer for optimal performance
-
-### Performance Notes
-
-- **iPhone 16 (A18):** 3-112 tok/s (TQ1_0), 3-36 tok/s (TQ2_0)
-- **iPhone 14 Pro (A16):** Similar performance
-- Models up to 7B supported
-- Keep app in foreground during training
-
-**[Full iOS Guide](./ios/README.md)**
-
----
-
-## macOS
-
-### Builds Available
-
-| Build | Hardware | Download |
-|-------|----------|----------|
-| `qvac-macos-apple-silicon-v1.0.zip` | M1/M2/M3/M4 | [Download](./macos/) |
-| `qvac-macos-intel-v1.0.zip` | Intel x64 | [Download](./macos/) |
-
-### Requirements
-
-- macOS 13.0+ (Ventura or newer)
-- Xcode Command Line Tools
-- For Apple Silicon: M1 or newer
-- For Intel: macOS with Metal support
-
-### Installation
+### macOS (Apple Silicon)
 
 ```bash
-# Download
-curl -L https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-macos-apple-silicon-v1.0.zip \
-  -o qvac-macos.zip
-
-# Extract
-unzip qvac-macos.zip
-cd qvac-macos-apple-silicon-v1.0
+# Download from GitHub Releases
+curl -LO https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7334/llama-b7334-bin-macos-arm64.zip
+unzip llama-b7334-bin-macos-arm64.zip
+cd llama-b7334-bin-macos-arm64
 
 # Remove quarantine (if needed)
 xattr -cr .
@@ -142,34 +95,62 @@ xattr -cr .
 ./bin/llama-cli --version
 ```
 
-### Performance Notes
+**Requirements:**
+- macOS 13.0+ (Ventura or newer)
+- Xcode Command Line Tools
+- For Apple Silicon: M1 or newer
+- For Intel: use `llama-b7334-bin-macos-x64.zip`
 
+**Performance Notes:**
 - **Apple M3 Pro:** 33-386 tok/s (TQ1_0), 6-124 tok/s (TQ2_0)
 - **Apple M1:** ~70% of M3 Pro performance
 - Models up to 13B supported on 16GB+ machines
 - Unified memory enables larger models than discrete GPU systems
 
-**[Full macOS Guide](./macos/README.md)**
+---
+
+### iOS
+
+```bash
+# Download from GitHub Releases
+curl -LO https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7334/llama-b7334-xcframework.zip
+unzip llama-b7334-xcframework.zip
+```
+
+**Requirements:**
+- iOS 16+
+- iPhone 12 or newer recommended
+- A14 Bionic or newer for optimal performance
+
+**Performance Notes:**
+- **iPhone 16 (A18):** 3-112 tok/s (TQ1_0), 3-36 tok/s (TQ2_0)
+- **iPhone 14 Pro (A16):** Similar performance
+- Models up to 7B supported
+- Keep app in foreground during training
 
 ---
 
-## Linux
+### Linux (Vulkan)
 
-### Builds Available
+```bash
+# Download from GitHub Releases
+wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7334/llama-b7334-bin-ubuntu-x64-vulkan.zip
+unzip llama-b7334-bin-ubuntu-x64-vulkan.zip
+cd llama-b7334-bin-ubuntu-x64-vulkan
 
-| Build | GPU Support | Download |
-|-------|-------------|----------|
-| `qvac-linux-vulkan-x64-v1.0.zip` | AMD/NVIDIA/Intel (Vulkan) | [Download](./linux/) |
-| `qvac-linux-arm64-v1.0.zip` | ARM64 CPU | [Download](./linux/) |
-| `qvac-linux-sycl-intel-v1.0.zip` | Intel GPU (SYCL) | [Download](./linux/) |
+# Test installation
+./bin/llama-cli --version
 
-### Requirements
+# Verify Vulkan
+vulkaninfo | head -20
+```
 
+**Requirements:**
 - Linux kernel 5.4+
 - Vulkan 1.1+ drivers
 - glibc 2.31+
 
-### Vulkan Driver Installation
+**Vulkan Driver Installation:**
 
 ```bash
 # NVIDIA
@@ -182,31 +163,28 @@ sudo apt install mesa-vulkan-drivers
 sudo apt install intel-media-va-driver mesa-vulkan-drivers
 ```
 
-### Installation
-
-```bash
-# Download
-wget https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-linux-vulkan-x64-v1.0.zip
-
-# Extract
-unzip qvac-linux-vulkan-x64-v1.0.zip
-cd qvac-linux-vulkan-x64-v1.0
-
-# Test installation
-./bin/llama-cli --version
-
-# Verify Vulkan
-vulkaninfo | head -20
-```
-
-### Performance Notes
-
+**Performance Notes:**
 - **NVIDIA RTX 4090:** 74-549 tok/s (TQ1_0), 13-190 tok/s (TQ2_0)
 - **AMD 7900 XTX:** Similar to RTX 4090
 - **Intel Arc A770:** ~50% of RTX 4090
 - All model sizes supported with sufficient VRAM
 
-**[Full Linux Guide](./linux/README.md)**
+---
+
+### Windows
+
+```powershell
+# Download from GitHub Releases (use browser or PowerShell)
+# Vulkan: llama-b7334-bin-win-vulkan-x64.zip
+# CPU: llama-b7334-bin-win-x64.zip
+# SYCL (Intel): llama-b7334-bin-win-sycl-x64.zip
+# HIP (AMD): llama-b7334-bin-win-hip-x64.zip
+
+# Extract and run
+Expand-Archive llama-b7334-bin-win-vulkan-x64.zip -DestinationPath .
+cd llama-b7334-bin-win-vulkan-x64
+.\bin\llama-cli.exe --version
+```
 
 ---
 
@@ -226,21 +204,6 @@ Each release package contains:
 
 ---
 
-## Verifying Downloads
-
-All releases include SHA256 checksums:
-
-```bash
-# Verify checksum
-sha256sum -c checksums.txt
-
-# Or manually
-sha256sum qvac-linux-vulkan-x64-v1.0.zip
-# Compare with published checksum
-```
-
----
-
 ## Building from Source
 
 If pre-built binaries don't work for your system:
@@ -249,7 +212,6 @@ If pre-built binaries don't work for your system:
 # Clone repository
 git clone https://github.com/tetherto/qvac-fabric-llm.cpp.git
 cd qvac-fabric-llm.cpp
-git checkout bitnet-gpu
 
 # Configure (choose your backend)
 # Vulkan (cross-platform)
@@ -290,7 +252,7 @@ cmake --build build -j$(nproc)
 
 | Version | Date | Notes |
 |---------|------|-------|
-| v1.0 | January 2026 | Initial release with TQ1_0/TQ2_0 support |
+| b7334 | March 2026 | Current release with TQ1_0/TQ2_0 support |
 
 **[Full Release Notes](../RELEASE_NOTES.md)**
 
@@ -298,4 +260,5 @@ cmake --build build -j$(nproc)
 
 <div align="center">
   <p><b>BitNet b1.58 GPU Inference - Available Everywhere</b></p>
+  <p><a href="https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334">Download from GitHub Releases</a></p>
 </div>

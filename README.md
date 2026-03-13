@@ -72,7 +72,7 @@ This repository contains the implementation and artifacts for our research:
 
 | Task | Location |
 |------|----------|
-| Download binaries | `releases/[platform]/` |
+| Download binaries | [GitHub Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334) |
 | Run inference | [Quick Start](#quick-start) |
 | Fine-tune with LoRA | [Usage Examples](#usage-examples) |
 | View benchmarks | [docs/BENCHMARKS.md](./docs/BENCHMARKS.md) |
@@ -111,13 +111,11 @@ qvac-fabric-llm-bitnet-finetune/
 │       ├── README_inference_comparison.md
 │       └── biomed_comparison_results.json
 │
-└── releases/                      # Pre-built Binaries
-    ├── README.md                  # Platform overview
-    ├── android/                   # Android (Termux) builds
-    ├── ios/                       # iOS builds
-    ├── linux/                     # Linux builds (Vulkan, SYCL)
-    └── macos/                     # macOS builds (Metal)
+└── releases/                      # Release Documentation
+    └── README.md                  # Links to GitHub Releases
 ```
+
+> **Pre-built Binaries:** Download from [GitHub Releases (b7334)](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334)
 
 ---
 
@@ -153,10 +151,11 @@ python3 scripts/convert-bitnet-to-gguf.py \
 <summary><b>Android (Termux)</b></summary>
 
 ```bash
-# Download pre-built binary
-wget https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-android-adreno-arm64-v1.0.zip
-unzip qvac-android-adreno-arm64-v1.0.zip
-cd qvac-android-adreno-arm64-v1.0
+# Download Android build from GitHub Releases
+# Artifact: llama-b7334-bin-android.zip
+wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7334/llama-b7334-bin-android.zip
+unzip llama-b7334-bin-android.zip
+cd llama-b7334-bin-android
 
 # Set library path
 export LD_LIBRARY_PATH=.
@@ -174,7 +173,7 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
   -n 128
 ```
 
-**[Full Android Guide](./releases/android/README.md)**
+**[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334)**
 
 </details>
 
@@ -182,16 +181,19 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
 <summary><b>macOS (Apple Silicon)</b></summary>
 
 ```bash
-# Download pre-built binary
-curl -L https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-macos-apple-silicon-v1.0.zip \
-  -o qvac-macos.zip
-unzip qvac-macos.zip
-cd qvac-macos-apple-silicon-v1.0
+# Download macOS Apple Silicon build from GitHub Releases
+# Artifact: llama-b7334-bin-macos-arm64.zip
+curl -LO https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7334/llama-b7334-bin-macos-arm64.zip
+unzip llama-b7334-bin-macos-arm64.zip
+cd llama-b7334-bin-macos-arm64
+
+# Remove quarantine (if needed)
+xattr -cr .
 
 # Download BitNet model
 mkdir -p models
-wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58-large.tq1_0.gguf \
-  -O models/bitnet-700m.tq1_0.gguf
+curl -L https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58-large.tq1_0.gguf \
+  -o models/bitnet-700m.tq1_0.gguf
 
 # Run inference (TQ1_0 is faster on Apple Silicon)
 ./bin/llama-cli \
@@ -201,7 +203,7 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
   -n 256
 ```
 
-**[Full macOS Guide](./releases/macos/README.md)**
+**[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334)**
 
 </details>
 
@@ -209,10 +211,11 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
 <summary><b>Linux/Windows (NVIDIA/AMD/Intel)</b></summary>
 
 ```bash
-# Download Vulkan binary
-wget https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/releases/download/v1.0/qvac-linux-vulkan-x64-v1.0.zip
-unzip qvac-linux-vulkan-x64-v1.0.zip
-cd qvac-linux-vulkan-x64-v1.0
+# Download Linux Vulkan build from GitHub Releases
+# Artifact: llama-b7334-bin-ubuntu-x64-vulkan.zip
+wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7334/llama-b7334-bin-ubuntu-x64-vulkan.zip
+unzip llama-b7334-bin-ubuntu-x64-vulkan.zip
+cd llama-b7334-bin-ubuntu-x64-vulkan
 
 # Download BitNet model
 mkdir -p models
@@ -227,7 +230,7 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
   -n 256
 ```
 
-**[Full Linux Guide](./releases/linux/README.md)**
+**[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334)**
 
 </details>
 
@@ -235,14 +238,20 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
 
 ## Downloads
 
-Pre-built binaries optimized for each platform:
+Pre-built binaries from [GitHub Releases (b7334)](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334):
 
-| Platform | Hardware | Backend | Download |
-|----------|----------|---------|----------|
-| Android | Qualcomm Adreno, ARM Mali | Vulkan | [Download](./releases/android/) |
-| macOS | Apple M1/M2/M3/M4 | Metal | [Download](./releases/macos/) |
-| iOS | Apple A-series | Metal | [Download](./releases/ios/) |
-| Linux/Win | AMD/Intel/NVIDIA | Vulkan | [Download](./releases/linux/) |
+| Platform | Hardware | Artifact | Download |
+|----------|----------|----------|----------|
+| Android | Adreno/Mali | `llama-b7334-bin-android.zip` | [GitHub](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334) |
+| macOS | Apple Silicon | `llama-b7334-bin-macos-arm64.zip` | [GitHub](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334) |
+| macOS | Intel | `llama-b7334-bin-macos-x64.zip` | [GitHub](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334) |
+| iOS | A-series | `llama-b7334-xcframework.zip` | [GitHub](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334) |
+| Linux | Vulkan | `llama-b7334-bin-ubuntu-x64-vulkan.zip` | [GitHub](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334) |
+| Linux | CPU | `llama-b7334-bin-ubuntu-x64.zip` | [GitHub](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334) |
+| Windows | Vulkan | `llama-b7334-bin-win-vulkan-x64.zip` | [GitHub](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334) |
+| Windows | CPU | `llama-b7334-bin-win-x64.zip` | [GitHub](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334) |
+| Windows | SYCL (Intel) | `llama-b7334-bin-win-sycl-x64.zip` | [GitHub](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334) |
+| Windows | HIP (AMD) | `llama-b7334-bin-win-hip-x64.zip` | [GitHub](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334) |
 
 ### What's Included
 
@@ -254,7 +263,7 @@ Each download contains:
 - `llama-export-lora` - Export/merge LoRA adapters
 - Required libraries (GGML, Vulkan/Metal backends)
 
-**[All Releases & Documentation](./releases/README.md)**
+**[All Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334)**
 
 ---
 
@@ -483,18 +492,12 @@ Our Vulkan kernels preserve bit-exact equivalence with CPU reference:
 ### Getting Started
 - [Quick Start](#quick-start)
 - [Downloads](#downloads)
-- [Platform Guides](./releases/)
+- [GitHub Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334)
 
 ### Benchmarks & Evaluation
 - [Detailed Benchmarks](./docs/BENCHMARKS.md)
 - [Evaluation Guide](./evaluations/README.md)
 - [Biomedical Fine-tuning Report](./evaluations/reports/BIOMED_FINETUNING_REPORT.md)
-
-### Platform Guides
-- [Android Setup](./releases/android/README.md)
-- [macOS Setup](./releases/macos/README.md)
-- [iOS Setup](./releases/ios/README.md)
-- [Linux Setup](./releases/linux/README.md)
 
 ---
 
@@ -566,7 +569,7 @@ This project is licensed under the Apache 2.0 License.
 ## Links
 
 - [Project Repository](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune)
-- [Release Downloads](./releases/)
+- [Release Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334)
 - [Discussion Forum](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/discussions)
 - [Issue Tracker](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/issues)
 - [Full Documentation](./docs/)
