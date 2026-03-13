@@ -127,9 +127,8 @@ qvac-fabric-llm-bitnet-finetune/
 
 ```bash
 # 1. Clone the BitNet-enabled llama.cpp fork
-git clone https://github.com/tetherto/qvac-fabric-llm.cpp/tree/fabric-llm-finetune
+git clone https://github.com/tetherto/qvac-fabric-llm.cpp/
 cd qvac-fabric-llm.cpp
-git checkout bitnet-gpu
 
 # 2. Configure with Vulkan enabled
 cmake -B build -DLLAMA_VULKAN=ON -DLLAMA_CUDA=OFF -DLLAMA_METAL=OFF
