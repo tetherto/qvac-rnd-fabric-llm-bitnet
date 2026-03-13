@@ -358,8 +358,6 @@ We welcome evaluation contributions!
 
 - [Main README](../README.md) - Project overview
 - [Benchmarks](../docs/BENCHMARKS.md) - Performance metrics
-- [Datasets Guide](../datasets/README.md) - Dataset creation
-- [Release Notes](../RELEASE_NOTES.md) - Version history
 
 ---
 
