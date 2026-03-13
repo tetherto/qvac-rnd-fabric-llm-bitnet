@@ -86,7 +86,6 @@ This repository contains the implementation and artifacts for our research:
 ```
 qvac-fabric-llm-bitnet-finetune/
 ├── README.md                      # This file - main documentation
-├── RELEASE_NOTES.md               # Version history and changelog
 │
 ├── docs/                          # Research Documentation
 │   └── BENCHMARKS.md              # Comprehensive performance metrics
@@ -570,7 +569,6 @@ This project is licensed under the Apache 2.0 License.
 
 - [Project Repository](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune)
 - [Release Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335)
-- [Discussion Forum](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/discussions)
 - [Issue Tracker](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/issues)
 - [Full Documentation](./docs/)
 
