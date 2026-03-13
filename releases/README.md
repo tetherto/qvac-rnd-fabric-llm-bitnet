@@ -2,7 +2,8 @@
 
 Pre-built binaries for BitNet b1.58 GPU inference and LoRA fine-tuning across all supported platforms.
 
-**Download from:** [GitHub Releases (b7335)](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335)
+The qvac-fabric-llm.cpp/releases directory provides optimized binaries for different hardware backends. 
+**Download the Binaries from:** [GitHub Releases (b7335)](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335)
 
 ---
 
