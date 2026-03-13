@@ -1,6 +1,6 @@
 # BitNet b1.58 GPU Performance Benchmarks
 
-Comprehensive performance metrics for BitNet b1.58 inference and LoRA fine-tuning across heterogeneous GPU platforms.
+Comprehensive performance metrics for BitNet b1.58 inference and LoRA fine-tuning across heterogeneous desktop and mobile GPU platforms.
 
 ---
 
