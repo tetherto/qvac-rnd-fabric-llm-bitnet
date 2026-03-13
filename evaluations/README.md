@@ -12,13 +12,21 @@ This directory contains datasets, evaluation scripts, and comprehensive reports 
 
 **Purpose:** Domain-specific instruction fine-tuning for medical/scientific knowledge
 
-**Statistics:**
-- **Total**: 10,000 examples
-- **Train**: 8,000 examples
-- **Validation**: 1,000 examples
-- **Test**: 1,000 examples
-- **Classes**: Yes/No/Uncertain (balanced)
-- **Source**: PubMedQA (MIT License)
+```
+Total Examples: 330
+├── Training: 264 (80%)
+├── Validation: 33 (10%)
+└── Test: 33 (10%)
+
+Label Distribution (Perfectly Balanced):
+├── Yes: 110 (33.3%)
+├── No: 110 (33.3%)
+└── Uncertain: 110 (33.3%)
+
+Sources:
+├── PubMedQA Artificial: 209 (63.3%)
+└── PubMedQA Labeled: 121 (36.7%)
+```
 
 **Format:**
 ```json
