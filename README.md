@@ -24,14 +24,18 @@
 
 ## What Makes This Different?
 
-**The Problem:** BitNet b1.58 introduced revolutionary 1.58-bit ternary weights, but inference was locked to CPUs via bitnet.cpp. GPUs remained untapped. Furthermore LORA finetuning was locked for edge devices.
+* [**Tether**](https://tether.io/data/) AI Research introduces [**QVAC-fabric-llm-finetune-bitnet**](https://github.com/tetherto/qvac-rnd-fabric-llm-bitnet)**,** the **world’s first LoRA BitNet fine-tuning framework** on vendor-agnostic consumer GPUs on consumer and edge devices. It’s an extension of [**QVAC-fabric-llm**](https://huggingface.co/blog/qvac/fabric-llm-finetune) (based on [llama.cpp](https://github.com/ggml-org/llama.cpp)) that brings new features to the open-source community.
 
-**Our Solution:** The first GPU backend for BitNet b1.58 that enables:
+* The framework offers cross-platform LoRA fine-tuning support for BitNet models across heterogeneous consumer GPUs including AMD, Apple M3 Pro (GPU) and others.
 
-- **Lossless Inference** - Bit-exact equivalence with CPU results
-- **Vulkan and Metal Acceleration** - Multi-fold inference and fine-tuning speedups across GPU architectures
-- **BitNet LoRA Fine-tuning** - First complete training pipeline for BitNet on GPUs
-- **Mobile Fine-tuning Support** - Dynamic tiling to support LoRa fine-tuning for constrained mobile GPUs
+* This marks the first successful demonstration of BitNet fine-tuning on mobile GPUs (Adreno, Mali, Apple Bionic GPU). Users can fine-tune 125M-parameter BitNet models in \~10 minutes on a Samsung S25. For larger models (such as the 1B BitNet), fine-tuning \~300 documents (\~18k tokens) completes in 1 hour 18 mins on the Samsung S25 (Adreno GPU) and 1 hour 45 minutes on the iPhone 16.
+
+* The BitNet architecture implementation demonstrates the capability to fine-tune models that are ~2 times larger on edge devices compared to Q4 non-BitNet models, showcasing the memory advantage of the BitNet architecture.
+    
+* It was also demonsrated that inference of a Bitnet model is significantly faster, ranging from **2.1 to 11.3 times**, on **edge GPUs compared to CPUs** across leading flagship devices, including the Samsung S25, Google Pixel 9, and iPhone 16.
+    
+* Our benchmark shows that the BitNet-1B model uses up to 77.8% less VRAM than Gemma-3-1B (F16) and 65.6% less VRAM than Qwen3-0.6B (F16). This substantial reduction in memory usage makes it significantly more feasible to deploy larger models on memory-constrained edge devices. Further reinforcing this advantage, despite having **3.25 times** more parameters **(13B vs. 4B)**, **BitNet-13B** uses 29% less VRAM (2,789 MB) than a 4-bit quantized Qwen3-4B (Q4) model. This breakthrough enables **13B-scale models to run on edge hardware** that previously struggled with 4B quantized models without the need for additional memory or hardware upgrades.
+
 
 | Platform | Hardware | Status |
 |----------|----------|--------|
