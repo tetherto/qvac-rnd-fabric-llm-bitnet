@@ -2,7 +2,7 @@
 
 Pre-built binaries for BitNet b1.58 GPU inference and LoRA fine-tuning across all supported platforms.
 
-**Download from:** [GitHub Releases (b7334)](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334)
+**Download from:** [GitHub Releases (b7335)](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335)
 
 ---
 
@@ -10,17 +10,17 @@ Pre-built binaries for BitNet b1.58 GPU inference and LoRA fine-tuning across al
 
 | Platform | Architecture | Backend | Artifact |
 |----------|--------------|---------|----------|
-| Android | ARM64 (Adreno/Mali) | Vulkan | `llama-b7334-bin-android.zip` |
-| iOS | ARM64 (Apple A-series) | Metal | `llama-b7334-xcframework.zip` |
-| macOS | ARM64 (Apple Silicon) | Metal | `llama-b7334-bin-macos-arm64.zip` |
-| macOS | x64 (Intel) | Metal | `llama-b7334-bin-macos-x64.zip` |
-| Linux | x64 | CPU | `llama-b7334-bin-ubuntu-x64.zip` |
-| Linux | x64 | Vulkan | `llama-b7334-bin-ubuntu-x64-vulkan.zip` |
-| Windows | x64 | CPU | `llama-b7334-bin-win-x64.zip` |
-| Windows | ARM64 | CPU | `llama-b7334-bin-win-arm64.zip` |
-| Windows | x64 | Vulkan | `llama-b7334-bin-win-vulkan-x64.zip` |
-| Windows | x64 | SYCL (Intel) | `llama-b7334-bin-win-sycl-x64.zip` |
-| Windows | x64 | HIP (AMD) | `llama-b7334-bin-win-hip-x64.zip` |
+| Android | ARM64 (Adreno/Mali) | Vulkan | `llama-b7335-bin-android.zip` |
+| iOS | ARM64 (Apple A-series) | Metal | `llama-b7335-xcframework.zip` |
+| macOS | ARM64 (Apple Silicon) | Metal | `llama-b7335-bin-macos-arm64.zip` |
+| macOS | x64 (Intel) | Metal | `llama-b7335-bin-macos-x64.zip` |
+| Linux | x64 | CPU | `llama-b7335-bin-ubuntu-x64.zip` |
+| Linux | x64 | Vulkan | `llama-b7335-bin-ubuntu-x64-vulkan.zip` |
+| Windows | x64 | CPU | `llama-b7335-bin-win-x64.zip` |
+| Windows | ARM64 | CPU | `llama-b7335-bin-win-arm64.zip` |
+| Windows | x64 | Vulkan | `llama-b7335-bin-win-vulkan-x64.zip` |
+| Windows | x64 | SYCL (Intel) | `llama-b7335-bin-win-sycl-x64.zip` |
+| Windows | x64 | HIP (AMD) | `llama-b7335-bin-win-hip-x64.zip` |
 
 ---
 
@@ -56,9 +56,9 @@ Pre-built binaries for BitNet b1.58 GPU inference and LoRA fine-tuning across al
 pkg update && pkg install wget unzip
 
 # Download from GitHub Releases
-wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7334/llama-b7334-bin-android.zip
-unzip llama-b7334-bin-android.zip
-cd llama-b7334-bin-android
+wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7335/llama-b7335-bin-android.zip
+unzip llama-b7335-bin-android.zip
+cd llama-b7335-bin-android
 
 # Set library path (required)
 export LD_LIBRARY_PATH=.
@@ -84,9 +84,9 @@ export LD_LIBRARY_PATH=.
 
 ```bash
 # Download from GitHub Releases
-curl -LO https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7334/llama-b7334-bin-macos-arm64.zip
-unzip llama-b7334-bin-macos-arm64.zip
-cd llama-b7334-bin-macos-arm64
+curl -LO https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7335/llama-b7335-bin-macos-arm64.zip
+unzip llama-b7335-bin-macos-arm64.zip
+cd llama-b7335-bin-macos-arm64
 
 # Remove quarantine (if needed)
 xattr -cr .
@@ -99,7 +99,7 @@ xattr -cr .
 - macOS 13.0+ (Ventura or newer)
 - Xcode Command Line Tools
 - For Apple Silicon: M1 or newer
-- For Intel: use `llama-b7334-bin-macos-x64.zip`
+- For Intel: use `llama-b7335-bin-macos-x64.zip`
 
 **Performance Notes:**
 - **Apple M3 Pro:** 33-386 tok/s (TQ1_0), 6-124 tok/s (TQ2_0)
@@ -113,8 +113,8 @@ xattr -cr .
 
 ```bash
 # Download from GitHub Releases
-curl -LO https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7334/llama-b7334-xcframework.zip
-unzip llama-b7334-xcframework.zip
+curl -LO https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7335/llama-b7335-xcframework.zip
+unzip llama-b7335-xcframework.zip
 ```
 
 **Requirements:**
@@ -134,9 +134,9 @@ unzip llama-b7334-xcframework.zip
 
 ```bash
 # Download from GitHub Releases
-wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7334/llama-b7334-bin-ubuntu-x64-vulkan.zip
-unzip llama-b7334-bin-ubuntu-x64-vulkan.zip
-cd llama-b7334-bin-ubuntu-x64-vulkan
+wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7335/llama-b7335-bin-ubuntu-x64-vulkan.zip
+unzip llama-b7335-bin-ubuntu-x64-vulkan.zip
+cd llama-b7335-bin-ubuntu-x64-vulkan
 
 # Test installation
 ./bin/llama-cli --version
@@ -175,14 +175,14 @@ sudo apt install intel-media-va-driver mesa-vulkan-drivers
 
 ```powershell
 # Download from GitHub Releases (use browser or PowerShell)
-# Vulkan: llama-b7334-bin-win-vulkan-x64.zip
-# CPU: llama-b7334-bin-win-x64.zip
-# SYCL (Intel): llama-b7334-bin-win-sycl-x64.zip
-# HIP (AMD): llama-b7334-bin-win-hip-x64.zip
+# Vulkan: llama-b7335-bin-win-vulkan-x64.zip
+# CPU: llama-b7335-bin-win-x64.zip
+# SYCL (Intel): llama-b7335-bin-win-sycl-x64.zip
+# HIP (AMD): llama-b7335-bin-win-hip-x64.zip
 
 # Extract and run
-Expand-Archive llama-b7334-bin-win-vulkan-x64.zip -DestinationPath .
-cd llama-b7334-bin-win-vulkan-x64
+Expand-Archive llama-b7335-bin-win-vulkan-x64.zip -DestinationPath .
+cd llama-b7335-bin-win-vulkan-x64
 .\bin\llama-cli.exe --version
 ```
 
@@ -252,7 +252,7 @@ cmake --build build -j$(nproc)
 
 | Version | Date | Notes |
 |---------|------|-------|
-| b7334 | 13 March 2026 | Current release with TQ1_0/TQ2_0 support |
+| b7335 | 13 March 2026 | Current release with TQ1_0/TQ2_0 support |
 
 **[Full Release Notes](../RELEASE_NOTES.md)**
 
@@ -260,5 +260,5 @@ cmake --build build -j$(nproc)
 
 <div align="center">
   <p><b>BitNet b1.58 GPU Inference - Available Everywhere</b></p>
-  <p><a href="https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7334">Download from GitHub Releases</a></p>
+  <p><a href="https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335">Download from GitHub Releases</a></p>
 </div>
