@@ -534,12 +534,12 @@ Please open an issue or pull request on GitHub.
 If you use this work in your research, please cite:
 
 ```bibtex
-@article{bitnet-gpu-2025,
-  title={LoRA Fine-Tuning BitNet b1.58 LLMs on Heterogeneous Edge GPUs},
-  author={Tether Data Team},
+@article{bitnet-heterogeneous-gpu-2026,
+  title={LoRA Fine-Tuning BitNet b1.58 LLMs on Heterogeneous Edge GPUs via QVAC Fabric},
+  author={Subash SN, Akshay Nambiar, Milan Gritta, Zhen Cong Chen, Arsalan Anwari, Gianfranco Cordella, Amril Nurman},
   journal={arXiv preprint},
-  year={2025},
-  note={First GPU backend for BitNet b1.58 with Vulkan acceleration}
+  year={2026},
+  note={First GPU backend for BitNet b1.58 with Vulkan and Metal acceleration}
 }
 ```
 
