@@ -11,7 +11,6 @@ This directory contains datasets, evaluation scripts, and comprehensive reports 
 **Location:** `./biomedical_qa/`
 
 **Purpose:** Domain-specific instruction fine-tuning for medical/scientific knowledge
-
 ```
 Total Examples: 330
 ├── Training: 264 (80%)
