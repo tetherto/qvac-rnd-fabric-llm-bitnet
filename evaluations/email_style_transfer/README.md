@@ -1,12 +1,12 @@
 # Email Style Transfer Dataset
 
-Synthetic personal email dataset for demonstrating style transfer fine-tuning.
+Synthetic personal email dataset for demonstrating style transfer fine-tuning with BitNet models.
 
 ---
 
 ## 📊 Dataset Overview
 
-**Purpose:** Fine-tuning LLMs to learn personal writing style, tone, and formatting patterns
+**Purpose:** Fine-tuning BitNet b1.58 LLMs to learn personal writing style, tone, and formatting patterns
 
 **Size:** 200 synthetic emails
 
@@ -80,9 +80,10 @@ Synthetic personal email dataset for demonstrating style transfer fine-tuning.
 **Training:**
 ```bash
 ./bin/llama-finetune-lora \
-  -m models/qwen3-1.7b-q8_0.gguf \
-  -f evaluation/email_style_transfer/email_dataset.jsonl \
+  -m models/bitnet-2b.tq2_0.gguf \
+  -f evaluations/email_style_transfer/email_dataset.jsonl \
   -c 512 -b 128 -ub 128 -ngl 999 \
+  --flash-attn off \
   --lora-rank 16 --lora-alpha 32 \
   --num-epochs 3
 ```
@@ -180,9 +181,9 @@ sunrise won't reschedule for us :)
 
 ### Quantitative Metrics
 
-**Perplexity:**
+**Perplexity (BitNet-2B):**
 - Base model: ~25-30
-- Fine-tuned model: ~8-12 (lower is better)
+- Fine-tuned with LoRA: ~8-12 (lower is better)
 
 **Style Similarity:**
 - Cosine similarity with training examples
@@ -323,14 +324,17 @@ To expand the dataset, you can:
 
 ### Hyperparameters
 
-**For Style Transfer:**
+**For BitNet Style Transfer:**
 ```bash
+-m models/bitnet-2b.tq2_0.gguf  # BitNet model (TQ2_0 for training stability)
+--flash-attn off        # Required for BitNet
 --lora-rank 16          # Sufficient capacity
 --lora-alpha 32         # Strong adaptation
 --num-epochs 3-5        # Avoid overfitting
 --learning-rate 1e-4    # Higher than domain adaptation
 -c 512                  # Emails are short
--b 128                  # Moderate batch
+-b 128 -ub 128          # Batch sizes
+-ngl 999                # Offload all layers to GPU
 ```
 
 ### Training Strategy
@@ -369,11 +373,12 @@ To expand the dataset, you can:
 ### Complete Training Pipeline
 
 ```bash
-# 1. Fine-tune on email style
+# 1. Fine-tune BitNet model on email style
 ./bin/llama-finetune-lora \
-  -m models/qwen3-1.7b-q8_0.gguf \
-  -f evaluation/email_style_transfer/email_dataset.jsonl \
+  -m models/bitnet-2b.tq2_0.gguf \
+  -f evaluations/email_style_transfer/email_dataset.jsonl \
   -c 512 -b 128 -ub 128 -ngl 999 \
+  --flash-attn off \
   --lora-rank 16 --lora-alpha 32 \
   --num-epochs 3 \
   --learning-rate 1e-4 \
@@ -381,17 +386,17 @@ To expand the dataset, you can:
 
 # 2. Test basic email generation
 ./bin/llama-cli \
-  -m models/qwen3-1.7b-q8_0.gguf \
+  -m models/bitnet-2b.tq2_0.gguf \
   --lora email_style_adapter.gguf \
-  -ngl 999 \
+  -ngl 999 --flash-attn off \
   -p "Write a quick email about meeting for coffee this weekend." \
   --temp 0.7
 
 # 3. Test specific formatting
 ./bin/llama-cli \
-  -m models/qwen3-1.7b-q8_0.gguf \
+  -m models/bitnet-2b.tq2_0.gguf \
   --lora email_style_adapter.gguf \
-  -ngl 999 \
+  -ngl 999 --flash-attn off \
   -p "Create a packing list email for tomorrow's hike." \
   --temp 0.7
 ```
