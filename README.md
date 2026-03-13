@@ -29,9 +29,9 @@
 **Our Solution:** The first GPU backend for BitNet b1.58 that enables:
 
 - **Lossless Inference** - Bit-exact equivalence with CPU results
-- **Vulkan Acceleration** - Multi-fold speedups across GPU architectures
-- **LoRA Fine-tuning** - First complete training pipeline for BitNet on GPUs
-- **Mobile Support** - Dynamic tiling for constrained mobile GPUs
+- **Vulkan and Metal Acceleration** - Multi-fold inference and fine-tuning speedups across GPU architectures
+- **BitNet LoRA Fine-tuning** - First complete training pipeline for BitNet on GPUs
+- **Mobile Fine-tuning Support** - Dynamic tiling to support LoRa fine-tuning for constrained mobile GPUs
 
 | Platform | Hardware | Status |
 |----------|----------|--------|
