@@ -252,7 +252,7 @@ cmake --build build -j$(nproc)
 
 | Version | Date | Notes |
 |---------|------|-------|
-| b7334 | March 2026 | Current release with TQ1_0/TQ2_0 support |
+| b7334 | 13 March 2026 | Current release with TQ1_0/TQ2_0 support |
 
 **[Full Release Notes](../RELEASE_NOTES.md)**
 
