@@ -1,0 +1,18 @@
+{
+  "total": 330,
+  "splits": {
+    "train": 264,
+    "validation": 33,
+    "test": 33
+  },
+  "class_counts": {
+    "No": 110,
+    "Uncertain": 110,
+    "Yes": 110
+  },
+  "sources": {
+    "pqa_artificial": 209,
+    "pqa_labeled": 121
+  },
+  "format": "Q/A text with Yes|No|Uncertain and short rationale; unstructured (no chat template)."
+}
