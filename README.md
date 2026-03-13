@@ -9,7 +9,7 @@
 
 <div align="center">
   <b>The first GPU backend for BitNet b1.58 with ternary inference and LORA finetuning</b><br>
-  <b>From smartphones to datacenters • Cross-platform Vulkan acceleration • Metal backend • On-device LoRA training</b>
+  <b>From smartphones to desktops • Cross-platform Vulkan acceleration • Metal backend acceleration • On-device LoRA training</b>
 </div>
 
 <p align="center">
