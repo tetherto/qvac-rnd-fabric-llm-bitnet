@@ -245,7 +245,6 @@ cmake --build build -j$(nproc)
 ### Getting Help
 
 - [GitHub Issues](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/issues)
-- [Discussions](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/discussions)
 
 ---
 
