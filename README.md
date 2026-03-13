@@ -24,7 +24,7 @@
 
 ## What Makes This Different?
 
-* [**Tether**](https://tether.io/data/) AI Research introduces the **world’s first LoRA BitNet fine-tuning framework** on vendor-agnostic consumer GPUs on consumer and edge devices. It’s an extension of [**QVAC-fabric-llm**](https://huggingface.co/blog/qvac/fabric-llm-finetune) (based on [llama.cpp](https://github.com/ggml-org/llama.cpp)) that brings new features to the open-source community.
+* [**Tether**](https://tether.io/data/) AI Research introduces the **world’s first LoRA BitNet fine-tuning framework** on vendor-agnostic consumer GPUs on consumer and edge devices. It’s an extension of [**QVAC-fabric-llm.cpp**](https://huggingface.co/blog/qvac/fabric-llm-finetune) (based on [llama.cpp](https://github.com/ggml-org/llama.cpp)) that brings BitNet fine-tuning capabilities to the open-source community.
 
 * The framework offers cross-platform LoRA fine-tuning support for BitNet models across heterogeneous consumer GPUs including AMD, Apple M3 Pro (GPU) and others.
 
