@@ -406,7 +406,6 @@ To expand the dataset, you can:
 ## 🔗 Related Resources
 
 - [Main Evaluation Guide](../README.md)
-- [Biomedical Dataset](../biomedical_qa/README.md)
 - [Training Documentation](../../README.md#usage-examples)
 - [Benchmarks](../../docs/BENCHMARKS.md)
 
@@ -429,18 +428,7 @@ To expand the dataset, you can:
 
 ---
 
-## 📄 Citation
 
-If you use this dataset in research:
-
-```bibtex
-@dataset{email_style_transfer2024,
-  title={Email Style Transfer Dataset for LLM Fine-Tuning},
-  author={qvac-finetune contributors},
-  year={2024},
-  note={Synthetic personal email dataset for style adaptation}
-}
-```
 
 ---
 
