@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Backends-Vulkan%20%7C%20Metal%20%7C%20CUDA-purple?style=for-the-badge"/>
 </p>
 
-<h1 align="center">LoRA Fine-Tuning BitNet b1.58 LLMs on Heterogeneous Edge GPUs</h1>
+<h1 align="center">LoRA Fine-Tuning BitNet b1.58 LLMs on Heterogeneous Edge GPUs via QVAC Fabric</h1>
 
 <div align="center">
   <b>The first GPU backend for BitNet b1.58 with ternary inference and LORA finetuning</b><br>
