@@ -8,7 +8,7 @@
 <h1 align="center">LoRA Fine-Tuning BitNet b1.58 LLMs on Heterogeneous Edge GPUs via QVAC Fabric</h1>
 
 <div align="center">
-  <b>The first GPU backend for BitNet b1.58 with ternary inference and LORA finetuning</b><br>
+  <b>The first GPU backend for BitNet b1.58 with ternary inference and LoRA finetuning</b><br>
   <b>From smartphones to desktops • Cross-platform Vulkan acceleration • Metal backend acceleration • On-device LoRA training</b>
 </div>
 
