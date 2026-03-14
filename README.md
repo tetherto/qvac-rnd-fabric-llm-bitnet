@@ -442,7 +442,7 @@ This enables stable training on mobile GPUs where static approaches fail.
 │         GGML Core Engine            │
 │  (Forward/Backward Pass, Optimizer) │
 ├──────────┬──────────┬───────────────┤
-│  Vulkan  │  Metal   │    CUDA       │
+│  Vulkan  │  Metal   │   Vulkan      │
 │ (Cross)  │ (Apple)  │  (NVIDIA)     │
 └──────────┴──────────┴───────────────┘
      ↓           ↓            ↓
