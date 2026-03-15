@@ -181,16 +181,25 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 1. **Download** the iOS xcframework from [GitHub Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)
    - Artifact: `llama-{latest-release}-xcframework.zip`
 
-2. **Open** the SwiftUI example project in Xcode
+2. Unzip the artifact and place it in qvac-fabric-llm.cpp 
+
+    ```
+    unzip llama-b7336-xcframework.zip
+    mkdir -p qvac-fabric-llm.cpp/build-apple
+    cp -r build-apple/llama.xcframework /data/qvac-fabric-llm.cpp/build-apple
+    
+    ```
+
+3. **Open** the SwiftUI example project in Xcode
    ```
    qvac-fabric-llm.cpp/examples/llama.swiftui/llama.swiftui.xcodeproj
    ```
 
-3. **Set** your Apple Developer team in *Signing & Capabilities*
+4. **Set** your Apple Developer team in *Signing & Capabilities*
 
-4. **Build & run** on your iPhone or iPad
+5. **Build & run** on your iPhone or iPad
 
-5. **Load** a BitNet model + LoRA adapter from the app's UI
+6. **Load** a BitNet model + LoRA adapter from the app's UI
 
 **[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
 
