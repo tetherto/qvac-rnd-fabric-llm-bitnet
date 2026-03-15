@@ -171,7 +171,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 ./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 99 -s 42 -c 512 --flash-attn off \
-  -p "Explain the BitNet architecture in one paragraph." \
+  -p "BitNet is a neural network architecture that uses ternary weights" \
   -n 128
 ```
 
@@ -200,7 +200,7 @@ curl -L https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bit
 ./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
-  -p "What are the advantages of 1-bit neural networks?" \
+  -p "The main advantages of 1-bit neural networks include" \
   -n 256
 ```
 
@@ -224,7 +224,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 ./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
-  -p "Describe quantum computing in simple terms." \
+  -p "Large language models are transforming the field of artificial intelligence by" \
   -n 256
 ```
 
@@ -248,7 +248,7 @@ curl.exe -L -o models/bitnet-xl.tq2_0.gguf ^
 .\llama-cli.exe ^
   -m models\bitnet-xl.tq2_0.gguf ^
   -ngl 999 -c 512 --flash-attn off ^
-  -p "Describe quantum computing in simple terms." ^
+  -p "Large language models are transforming the field of artificial intelligence by" ^
   -n 256
 ```
 
@@ -337,14 +337,14 @@ BitNet-2B vs Qwen3-1.7B (Q4): **60-64% win rate** for BitNet across all platform
 ./llama-cli \
   -m models/bitnet-3b.tq1_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
-  -p "Explain machine learning to a 10-year-old." \
+  -p "Machine learning is a branch of artificial intelligence that" \
   -n 256
 
 # TQ2_0 format (better numerical stability, ~2.0 bpw)
 ./llama-cli \
   -m models/bitnet-3b.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
-  -p "What is the capital of France?" \
+  -p "The capital of France is" \
   -n 64
 ```
 

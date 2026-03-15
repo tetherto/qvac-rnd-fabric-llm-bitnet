@@ -8,7 +8,7 @@ This directory contains datasets, evaluation scripts, and comprehensive reports 
 
 ### 1. Biomedical Question-Answering
 
-**Location:** `./biomedical_qa_data/`
+**Location:** `./biomedqa_data/`
 
 **Purpose:** Domain-specific instruction fine-tuning for medical/scientific knowledge
 ```
@@ -91,7 +91,7 @@ Compares base model performance against fine-tuned LoRA adapters.
 python scripts/compare_base_vs_adapters.py \
   --base-model models/base.gguf \
   --adapter models/lora_adapter.gguf \
-  --test-data biomedical_qa_data/test.jsonl \
+  --test-data biomedqa_data/test.jsonl \
   --output results.json
 ```
 
@@ -112,7 +112,7 @@ Tests fine-tuned models on biomedical prompts with ground truth validation.
 python scripts/test_biomed_prompts.py \
   --model models/base.gguf \
   --adapter models/lora_adapter.gguf \
-  --dataset biomedical_qa_data/test.jsonl \
+  --dataset biomedqa_data/test.jsonl \
   --num-samples 100
 ```
 
@@ -238,7 +238,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 # Fine-tune on biomedical dataset
 ./llama-finetune-lora \
   -m models/bitnet-xl.tq2_0.gguf \
-  -f evaluations/biomedical_qa_data/train.jsonl \
+  -f evaluations/biomedqa_data/train.jsonl \
   --assistant-loss-only \
   -c 128 -b 128 -ub 128 -ngl 999 --flash-attn off \
   --num-epochs 8 \
@@ -248,7 +248,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 python evaluations/scripts/test_biomed_prompts.py \
   --model models/bitnet-xl.tq2_0.gguf \
   --adapter biomedical_adapter.gguf \
-  --dataset evaluations/biomedical_qa_data/validation.jsonl
+  --dataset evaluations/biomedqa_data/validation.jsonl
 ```
 
 ### Run Email Style Transfer
