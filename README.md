@@ -202,12 +202,39 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 
 Please download the latest binaries from the release page.
 
+Note : ⚠️ TQ2_0 is supported only for CPU on Apple Metal (macOS/iOS). Use TQ1_0 for Apple Silicon devices to enable GPU inference.
+
 ```bash
 # Download macOS Apple Silicon build from GitHub Releases and unzip it.
 # Artifact: llama-{latest-release}-bin-macos-arm64.zip
 
 # Remove quarantine (if needed)
 xattr -cr .
+
+# TQ_1 models
+
+# Download BitNet model
+mkdir -p models
+curl -L https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq1_0.gguf \
+  -o models/bitnet-xl.tq1_0.gguf
+
+## OPTION A: If you downloaded and unzipped the pre-built release
+
+./llama-cli \
+  -m models/bitnet-xl.tq1_0.gguf \
+  -ngl 999 -c 512 --flash-attn off \
+  -p "The main advantages of 1-bit neural networks include" \
+  -n 256
+
+## OPTION B: If you built from source yourself using CMake
+
+.build/bin/llama-cli \
+  -m models/bitnet-xl.tq2_0.gguf \
+  -ngl 999 -c 512 --flash-attn off \
+  -p "The main advantages of 1-bit neural networks include" \
+  -n 256
+
+# TQ_2 models
 
 # Download BitNet model
 mkdir -p models
