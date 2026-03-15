@@ -133,35 +133,7 @@ qvac-fabric-llm-bitnet-finetune/
 
 We release platform specific pre-compiled binaries that allow users to run BitNet inference and Finetuning without the hassle of compiling them. 
 
-## Downloads
 
-Pre-built binaries from [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases):
-
-| Platform | Hardware | Artifact | Download |
-|----------|----------|----------|----------|
-| Android | Adreno/Mali | `llama-{latest-release}-bin-android.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| macOS | Apple Silicon | `llama-{latest-release}-bin-macos-arm64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| macOS | Intel | `llama-{latest-release}-bin-macos-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| iOS | A-series | `llama-{latest-release}-xcframework.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Linux | Vulkan | `llama-{latest-release}-bin-ubuntu-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Linux | CPU | `llama-{latest-release}-bin-ubuntu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | Vulkan | `llama-{latest-release}-bin-win-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | CPU | `llama-{latest-release}-bin-win-cpu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | SYCL (Intel) | `llama-{latest-release}-bin-win-sycl-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | HIP (AMD) | `llama-{latest-release}-bin-win-hip-radeon-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-
-### What's Included
-
-Each download contains:
-- `llama-cli` - Inference and interactive chat
-- `llama-finetune-lora` - LoRA fine-tuning binary
-- `llama-quantize` - Model quantization tool
-- `llama-perplexity` - Model evaluation (KL divergence, perplexity)
-- Required libraries (GGML, Vulkan/Metal backends)
-
-**[All Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
-
----
 
 ### Choose Your Platform
 
@@ -182,7 +154,8 @@ mkdir -p models
 wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
   -O models/bitnet-xl.tq2_0.gguf
 
-# Run inference
+# Run inference (Run this command inside the /build/bin folder if building from source)
+
 ./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 99 -s 42 -c 512 --flash-attn off \
@@ -233,7 +206,7 @@ mkdir -p models
 curl -L https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
   -o models/bitnet-xl.tq2_0.gguf
 
-# Run inference
+# Run inference (Run this command inside the /build/bin folder if building from source)
 ./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
@@ -257,7 +230,7 @@ mkdir -p models
 wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
   -O models/bitnet-xl.tq2_0.gguf
 
-# Run inference
+# Run inference (Run this command inside the /build/bin folder if building from source)
 ./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
@@ -280,7 +253,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 mkdir models
 curl.exe -L -o models/bitnet-xl.tq2_0.gguf https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf
 
-# Run inference
+# Run inference (Run this command inside the \build\bin\Release\ folder if building from source)
 .\llama-cli.exe `
   -m models\bitnet-xl.tq2_0.gguf `
   -ngl 999 -c 512 --flash-attn off `
@@ -294,7 +267,37 @@ curl.exe -L -o models/bitnet-xl.tq2_0.gguf https://huggingface.co/qvac/fabric-ll
 
 ---
 
-### Building from Source
+## Downloads
+
+Pre-built binaries from [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases):
+
+| Platform | Hardware | Artifact | Download |
+|----------|----------|----------|----------|
+| Android | Adreno/Mali | `llama-{latest-release}-bin-android.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| macOS | Apple Silicon | `llama-{latest-release}-bin-macos-arm64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| macOS | Intel | `llama-{latest-release}-bin-macos-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| iOS | A-series | `llama-{latest-release}-xcframework.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Linux | Vulkan | `llama-{latest-release}-bin-ubuntu-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Linux | CPU | `llama-{latest-release}-bin-ubuntu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | Vulkan | `llama-{latest-release}-bin-win-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | CPU | `llama-{latest-release}-bin-win-cpu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | SYCL (Intel) | `llama-{latest-release}-bin-win-sycl-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | HIP (AMD) | `llama-{latest-release}-bin-win-hip-radeon-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+
+### What's Included
+
+Each download contains:
+- `llama-cli` - Inference and interactive chat
+- `llama-finetune-lora` - LoRA fine-tuning binary
+- `llama-quantize` - Model quantization tool
+- `llama-perplexity` - Model evaluation (KL divergence, perplexity)
+- Required libraries (GGML, Vulkan/Metal backends)
+
+**[All Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
+
+---
+
+## Building from Source
 
 We also Open source the code to let users build the binaries from source.
 
@@ -323,6 +326,9 @@ cmake --build build -j
 cmake --build build --config Release -j
 ```
 
+### Running Inference
+
+> **After building, [choose your platform to run inference using the Quick Start guide above](#choose-your-platform).** Platform-specific commands and instructions are provided to help you get started quickly.
 
 
 ### Optional - Converting a BitNet Model gguf to TQ1_0, TQ2_0 format
