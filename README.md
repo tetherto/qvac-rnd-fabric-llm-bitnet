@@ -209,15 +209,15 @@ curl -L https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bit
 </details>
 
 <details>
-<summary><b>Linux/Windows (NVIDIA/AMD/Intel)</b></summary>
+<summary><b>Linux (NVIDIA/AMD/Intel)</b></summary>
 
 ```bash
-# Download Linux/Windows Vulkan build from GitHub Releases
-# Artifact: llama-{latest-release}-bin-ubuntu-vulkan-x64.zip ; llama-{latest-release}-bin-win-vulkan-x64.zip
+# Download Linux Vulkan build from GitHub Releases
+# Artifact: llama-{latest-release}-bin-ubuntu-vulkan-x64.zip
 
 # Download BitNet model
 mkdir -p models
-curl https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
+wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
   -O models/bitnet-xl.tq2_0.gguf
 
 # Run inference
@@ -225,6 +225,30 @@ curl https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
   -p "Describe quantum computing in simple terms." \
+  -n 256
+```
+
+**[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
+
+</details>
+
+<details>
+<summary><b>Windows (NVIDIA/AMD/Intel)</b></summary>
+
+```powershell
+# Download Windows Vulkan build from GitHub Releases
+# Artifact: llama-{latest-release}-bin-win-vulkan-x64.zip
+
+# Download BitNet model
+mkdir models
+curl.exe -L -o models/bitnet-xl.tq2_0.gguf ^
+  https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf
+
+# Run inference
+.\bin\llama-cli.exe ^
+  -m models\bitnet-xl.tq2_0.gguf ^
+  -ngl 999 -c 512 --flash-attn off ^
+  -p "Describe quantum computing in simple terms." ^
   -n 256
 ```
 
