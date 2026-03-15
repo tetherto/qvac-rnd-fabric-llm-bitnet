@@ -154,9 +154,17 @@ mkdir -p models
 wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
   -O models/bitnet-xl.tq2_0.gguf
 
-# Run inference (Run this command inside the /build/bin folder if building from source)
+## OPTION A: If you downloaded and unzipped the pre-built release
 
 ./llama-cli \
+  -m models/bitnet-xl.tq2_0.gguf \
+  -ngl 99 -s 42 -c 512 --flash-attn off \
+  -p "BitNet is a neural network architecture that uses ternary weights" \
+  -n 128
+
+## OPTION B: If you built from source yourself using CMake
+
+.build/bin/llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 99 -s 42 -c 512 --flash-attn off \
   -p "BitNet is a neural network architecture that uses ternary weights" \
@@ -206,8 +214,17 @@ mkdir -p models
 curl -L https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
   -o models/bitnet-xl.tq2_0.gguf
 
-# Run inference (Run this command inside the /build/bin folder if building from source)
+## OPTION A: If you downloaded and unzipped the pre-built release
+
 ./llama-cli \
+  -m models/bitnet-xl.tq2_0.gguf \
+  -ngl 999 -c 512 --flash-attn off \
+  -p "The main advantages of 1-bit neural networks include" \
+  -n 256
+
+## OPTION B: If you built from source yourself using CMake
+
+.build/bin/llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
   -p "The main advantages of 1-bit neural networks include" \
@@ -230,12 +247,21 @@ mkdir -p models
 wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
   -O models/bitnet-xl.tq2_0.gguf
 
-# Run inference (Run this command inside the /build/bin folder if building from source)
+## OPTION A: If you downloaded and unzipped the pre-built release
+
 ./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
-  -ngl 999 -c 512 --flash-attn off \
-  -p "Large language models are transforming the field of artificial intelligence by" \
-  -n 256
+  -ngl 99 -s 42 -c 512 --flash-attn off \
+  -p "BitNet is a neural network architecture that uses ternary weights" \
+  -n 128
+
+## OPTION B: If you built from source yourself using CMake
+
+.build/bin/llama-cli \
+  -m models/bitnet-xl.tq2_0.gguf \
+  -ngl 99 -s 42 -c 512 --flash-attn off \
+  -p "BitNet is a neural network architecture that uses ternary weights" \
+  -n 128
 ```
 
 **[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
@@ -253,8 +279,15 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 mkdir models
 curl.exe -L -o models/bitnet-xl.tq2_0.gguf https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf
 
-# Run inference (Run this command inside the \build\bin\Release\ folder if building from source)
+# OPTION A: If you downloaded and unzipped the pre-built release
 .\llama-cli.exe `
+  -m models\bitnet-xl.tq2_0.gguf `
+  -ngl 999 -c 512 --flash-attn off `
+  -p "Large language models are transforming the field of artificial intelligence by" `
+  -n 256
+
+# OPTION B: If you built from source yourself using CMake
+.\build\bin\Release\llama-cli.exe `
   -m models\bitnet-xl.tq2_0.gguf `
   -ngl 999 -c 512 --flash-attn off `
   -p "Large language models are transforming the field of artificial intelligence by" `
