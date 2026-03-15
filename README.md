@@ -179,6 +179,26 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 </details>
 
 <details>
+<summary><b> iOS (iPhone/iPad)</b></summary>
+
+```bash
+
+# Download macOS Apple Silicon build from GitHub Releases
+# Artifact: llama-{latest-release}-xcframework.zip
+
+# To test on a real iPad/iPhone:
+cd qvac-fabric-llm.cpp/examples/llama.swiftui/llama.swiftui.xcodeproj
+
+# Open llama.swiftui.xcodeproj in Xcode
+# Set your Apple Developer team
+Build & run on device
+Load a model + adapter from the app's UI
+
+```
+</details>
+
+
+<details>
 <summary><b>macOS (Apple Silicon)</b></summary>
 
 Please download the latest binaries from the release page.
@@ -244,11 +264,7 @@ curl.exe -L -o models/bitnet-xl.tq2_0.gguf ^
   https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf
 
 # Run inference
-.\llama-cli.exe ^
-  -m models\bitnet-xl.tq2_0.gguf ^
-  -ngl 999 -c 512 --flash-attn off ^
-  -p "Large language models are transforming the field of artificial intelligence by" ^
-  -n 256
+.\llama-cli.exe -m models\bitnet-xl.tq2_0.gguf -ngl 999 -c 512 --flash-attn off -p "Large language models are transforming the field of artificial intelligence by" -n 256
 ```
 
 **[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
