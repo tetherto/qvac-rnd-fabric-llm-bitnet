@@ -11,17 +11,17 @@ which can be downloaded from [qvac-fabric-llm.cpp/releases](https://github.com/t
 
 | Platform | Architecture | Backend | Artifact |
 |----------|--------------|---------|----------|
-| Android | ARM64 (Adreno/Mali) | Vulkan | `llama-{latest-release)-bin-android.zip` |
-| iOS | ARM64 (Apple A-series) | Metal | `llama-{latest-release)-xcframework.zip` |
-| macOS | ARM64 (Apple Silicon) | Metal | `llama-{latest-release)-bin-macos-arm64.zip` |
-| macOS | x64 (Intel) | Metal | `llama-{latest-release)-bin-macos-x64.zip` |
-| Linux | x64 | CPU | `llama-{latest-release)-bin-ubuntu-x64.zip` |
-| Linux | x64 | Vulkan | `llama-{latest-release)-bin-ubuntu-x64-vulkan.zip` |
-| Windows | x64 | CPU | `llama-{latest-release)-bin-win-x64.zip` |
-| Windows | ARM64 | CPU | `llama-{latest-release)-bin-win-arm64.zip` |
-| Windows | x64 | Vulkan | `llama-{latest-release)-bin-win-vulkan-x64.zip` |
-| Windows | x64 | SYCL (Intel) | `llama-{latest-release)-bin-win-sycl-x64.zip` |
-| Windows | x64 | HIP (AMD) | `llama-{latest-release)-bin-win-hip-x64.zip` |
+| Android | ARM64 (Adreno/Mali) | Vulkan | `llama-{latest-release}-bin-android.zip` |
+| iOS | ARM64 (Apple A-series) | Metal | `llama-{latest-release}-xcframework.zip` |
+| macOS | ARM64 (Apple Silicon) | Metal | `llama-{latest-release}-bin-macos-arm64.zip` |
+| macOS | x64 (Intel) | Metal | `llama-{latest-release}-bin-macos-x64.zip` |
+| Linux | x64 | CPU | `llama-{latest-release}-bin-ubuntu-x64.zip` |
+| Linux | x64 | Vulkan | `llama-{latest-release}-bin-ubuntu-x64-vulkan.zip` |
+| Windows | x64 | CPU | `llama-{latest-release}-bin-win-x64.zip` |
+| Windows | ARM64 | CPU | `llama-{latest-release}-bin-win-arm64.zip` |
+| Windows | x64 | Vulkan | `llama-{latest-release}-bin-win-vulkan-x64.zip` |
+| Windows | x64 | SYCL (Intel) | `llama-{latest-release}-bin-win-sycl-x64.zip` |
+| Windows | x64 | HIP (AMD) | `llama-{latest-release}-bin-win-hip-x64.zip` |
 
 ---
 

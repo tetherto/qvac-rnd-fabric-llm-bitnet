@@ -240,16 +240,16 @@ Pre-built binaries from [qvac-fabric-llm.cpp/releases](https://github.com/tether
 
 | Platform | Hardware | Artifact | Download |
 |----------|----------|----------|----------|
-| Android | Adreno/Mali | `llama-{latest-release)-bin-android.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| macOS | Apple Silicon | `llama-{latest-release)-bin-macos-arm64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| macOS | Intel | `llama-{latest-release)-bin-macos-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| iOS | A-series | `llama-{latest-release)-xcframework.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Linux | Vulkan | `llama-{latest-release)-bin-ubuntu-x64-vulkan.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Linux | CPU | `llama-{latest-release)-bin-ubuntu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | Vulkan | `llama-{latest-release)-bin-win-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | CPU | `llama-{latest-release)-bin-win-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | SYCL (Intel) | `llama-{latest-release)-bin-win-sycl-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | HIP (AMD) | `llama-{latest-release)-bin-win-hip-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Android | Adreno/Mali | `llama-{latest-release}-bin-android.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| macOS | Apple Silicon | `llama-{latest-release}-bin-macos-arm64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| macOS | Intel | `llama-{latest-release}-bin-macos-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| iOS | A-series | `llama-{latest-release}-xcframework.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Linux | Vulkan | `llama-{latest-release}-bin-ubuntu-x64-vulkan.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Linux | CPU | `llama-{latest-release}-bin-ubuntu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | Vulkan | `llama-{latest-release}-bin-win-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | CPU | `llama-{latest-release}-bin-win-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | SYCL (Intel) | `llama-{latest-release}-bin-win-sycl-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | HIP (AMD) | `llama-{latest-release}-bin-win-hip-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
 
 ### What's Included
 
