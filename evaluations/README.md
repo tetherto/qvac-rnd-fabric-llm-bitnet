@@ -215,7 +215,7 @@ Raw numerical results from biomedical experiments.
 **Structure:**
 ```json
 {
-  "model": "qwen3-1.7b-q8_0",
+  "model": "bitnet-xl-tq2_0",
   "platform": "adreno-830",
   "accuracy": 0.8143,
   "loss": 0.234,
@@ -231,21 +231,24 @@ Raw numerical results from biomedical experiments.
 ### Run Biomedical Evaluation
 
 ```bash
+# Download BitNet model
+wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
+  -O models/bitnet-xl.tq2_0.gguf
+
 # Fine-tune on biomedical dataset
-cd /root/qvac-finetune
 ./bin/llama-finetune-lora \
-  -m models/qwen3-1.7b-q8_0.gguf \
-  -f evaluation/biomedical_qa/train.jsonl \
+  -m models/bitnet-xl.tq2_0.gguf \
+  -f evaluations/biomedical_qa/train.jsonl \
   --assistant-loss-only \
-  -c 128 -b 128 -ub 128 -ngl 999 -fa off \
+  -c 128 -b 128 -ub 128 -ngl 999 --flash-attn off \
   --num-epochs 8 \
   --output-adapter biomedical_adapter.gguf
 
 # Test on validation set
-python evaluation/scripts/test_biomed_prompts.py \
-  --model models/qwen3-1.7b-q8_0.gguf \
+python evaluations/scripts/test_biomed_prompts.py \
+  --model models/bitnet-xl.tq2_0.gguf \
   --adapter biomedical_adapter.gguf \
-  --dataset evaluation/biomedical_qa/validation.jsonl
+  --dataset evaluations/biomedical_qa/validation.jsonl
 ```
 
 ### Run Email Style Transfer
@@ -253,18 +256,18 @@ python evaluation/scripts/test_biomed_prompts.py \
 ```bash
 # Fine-tune on email dataset
 ./bin/llama-finetune-lora \
-  -m models/qwen3-1.7b-q8_0.gguf \
-  -f evaluation/email_style_transfer/email_dataset.jsonl \
-  -c 512 -b 128 -ub 128 -ngl 999 \
+  -m models/bitnet-xl.tq2_0.gguf \
+  -f evaluations/email_style_transfer/email_dataset.jsonl \
+  -c 512 -b 128 -ub 128 -ngl 999 --flash-attn off \
   --lora-rank 16 --lora-alpha 32 \
   --num-epochs 3 \
   --output-adapter email_adapter.gguf
 
 # Test style transfer
 ./bin/llama-cli \
-  -m models/qwen3-1.7b-q8_0.gguf \
+  -m models/bitnet-xl.tq2_0.gguf \
   --lora email_adapter.gguf \
-  -ngl 999 \
+  -ngl 999 --flash-attn off \
   -p "Write a quick email about meeting for coffee this weekend"
 ```
 

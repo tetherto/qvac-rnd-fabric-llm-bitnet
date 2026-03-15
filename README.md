@@ -164,12 +164,12 @@ export LD_LIBRARY_PATH= "YOUR LD LIBRARY PATH"
 
 # Download BitNet model
 mkdir -p models
-wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58-large.tq2_0.gguf \
-  -O models/bitnet-700m.tq2_0.gguf
+wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
+  -O models/bitnet-xl.tq2_0.gguf
 
 # Run inference
 ./bin/llama-cli \
-  -m models/bitnet-700m.tq2_0.gguf \
+  -m models/bitnet-xl.tq2_0.gguf \
   -ngl 99 -s 42 -c 512 --flash-attn off \
   -p "Explain the BitNet architecture in one paragraph." \
   -n 128
@@ -193,12 +193,12 @@ xattr -cr .
 
 # Download BitNet model
 mkdir -p models
-curl -L https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58-large.tq1_0.gguf \
-  -o models/bitnet-700m.tq1_0.gguf
+curl -L https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
+  -o models/bitnet-xl.tq2_0.gguf
 
-# Run inference (TQ1_0 is faster on Apple Silicon)
+# Run inference
 ./bin/llama-cli \
-  -m models/bitnet-700m.tq1_0.gguf \
+  -m models/bitnet-xl.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
   -p "What are the advantages of 1-bit neural networks?" \
   -n 256
@@ -217,12 +217,12 @@ curl -L https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1
 
 # Download BitNet model
 mkdir -p models
-wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58-large.tq1_0.gguf \
-  -O models/bitnet-700m.tq1_0.gguf
+curl https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf \
+  -O models/bitnet-xl.tq2_0.gguf
 
 # Run inference
 ./bin/llama-cli \
-  -m models/bitnet-700m.tq1_0.gguf \
+  -m models/bitnet-xl.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
   -p "Describe quantum computing in simple terms." \
   -n 256
