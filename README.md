@@ -610,7 +610,7 @@ This project is licensed under the Apache 2.0 License.
 - [Project Repository](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune)
 - [Release Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)
 - [Issue Tracker](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/issues)
-- [Full Documentation](./docs/)
+- [GPU Perfomance Benchmarks](./docs/)
 
 ---
 
