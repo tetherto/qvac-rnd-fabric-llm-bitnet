@@ -131,32 +131,37 @@ qvac-fabric-llm-bitnet-finetune/
 
 ## Quick Start
 
-### Prerequisites
-Before building from source, ensure you have the following installed on your system:
-* **CMake:** Required to configure the build. Download it from [https://cmake.org/download/](https://cmake.org/download/).
-* **Vulkan SDK:** Required for the `-DLLAMA_VULKAN=ON` flag. Download it from the [LunarG Vulkan SDK page](https://vulkan.lunarg.com/).
-* **Windows Users:** You will also need a C++ compiler. The easiest way is to install [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/) (or Build Tools) and ensure the **"Desktop development with C++"** workload is selected during installation.
+We release platform specific pre-compiled binaries that allow users to run BitNet inference and Finetuning without the hassle of compiling them. 
+
+## Downloads
+
+Pre-built binaries from [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases):
+
+| Platform | Hardware | Artifact | Download |
+|----------|----------|----------|----------|
+| Android | Adreno/Mali | `llama-{latest-release}-bin-android.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| macOS | Apple Silicon | `llama-{latest-release}-bin-macos-arm64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| macOS | Intel | `llama-{latest-release}-bin-macos-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| iOS | A-series | `llama-{latest-release}-xcframework.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Linux | Vulkan | `llama-{latest-release}-bin-ubuntu-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Linux | CPU | `llama-{latest-release}-bin-ubuntu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | Vulkan | `llama-{latest-release}-bin-win-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | CPU | `llama-{latest-release}-bin-win-cpu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | SYCL (Intel) | `llama-{latest-release}-bin-win-sycl-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | HIP (AMD) | `llama-{latest-release}-bin-win-hip-radeon-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+
+### What's Included
+
+Each download contains:
+- `llama-cli` - Inference and interactive chat
+- `llama-finetune-lora` - LoRA fine-tuning binary
+- `llama-quantize` - Model quantization tool
+- `llama-perplexity` - Model evaluation (KL divergence, perplexity)
+- Required libraries (GGML, Vulkan/Metal backends)
+
+**[All Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
 
 ---
-
-### Building from Source
-
-```bash
-# 1. Clone the BitNet-enabled llama.cpp fork
-git clone https://github.com/tetherto/qvac-fabric-llm.cpp/
-cd qvac-fabric-llm.cpp
-
-# 2. Configure with Vulkan enabled
-cmake -B build -DLLAMA_VULKAN=ON -DLLAMA_CUDA=OFF -DLLAMA_METAL=OFF
-
-# 3. Build
-cmake --build build -j
-
-# 3.1 Build for Windows
-cmake --build build --config Release -j
-```
-
-
 
 ### Choose Your Platform
 
@@ -289,6 +294,36 @@ curl.exe -L -o models/bitnet-xl.tq2_0.gguf https://huggingface.co/qvac/fabric-ll
 
 ---
 
+### Building from Source
+
+We also Open source the code to let users build the binaries from source.
+
+### Prerequisites
+Before building from source, ensure you have the following installed on your system:
+* **CMake:** Required to configure the build. Download it from [https://cmake.org/download/](https://cmake.org/download/).
+* **Vulkan SDK:** Required for the `-DLLAMA_VULKAN=ON` flag. Download it from the [LunarG Vulkan SDK page](https://vulkan.lunarg.com/).
+* **Windows Users:** You will also need a C++ compiler. The easiest way is to install [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/) (or Build Tools) and ensure the **"Desktop development with C++"** workload is selected during installation.
+
+---
+
+### Building the Binaries
+
+```bash
+# 1. Clone the BitNet-enabled llama.cpp fork
+git clone https://github.com/tetherto/qvac-fabric-llm.cpp/
+cd qvac-fabric-llm.cpp
+
+# 2. Configure with Vulkan enabled
+cmake -B build -DLLAMA_VULKAN=ON -DLLAMA_CUDA=OFF -DLLAMA_METAL=OFF
+
+# 3. Build
+cmake --build build -j
+
+# 3.1 Build for Windows
+cmake --build build --config Release -j
+```
+
+
 
 ### Optional - Converting a BitNet Model gguf to TQ1_0, TQ2_0 format
 
@@ -308,35 +343,7 @@ python3 convert_hf_to_gguf.py "/path/to/bitnet-b1.58-checkpoint" --outtype tq2_0
 
 ```
 
-## Downloads
 
-Pre-built binaries from [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases):
-
-| Platform | Hardware | Artifact | Download |
-|----------|----------|----------|----------|
-| Android | Adreno/Mali | `llama-{latest-release}-bin-android.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| macOS | Apple Silicon | `llama-{latest-release}-bin-macos-arm64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| macOS | Intel | `llama-{latest-release}-bin-macos-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| iOS | A-series | `llama-{latest-release}-xcframework.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Linux | Vulkan | `llama-{latest-release}-bin-ubuntu-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Linux | CPU | `llama-{latest-release}-bin-ubuntu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | Vulkan | `llama-{latest-release}-bin-win-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | CPU | `llama-{latest-release}-bin-win-cpu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | SYCL (Intel) | `llama-{latest-release}-bin-win-sycl-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | HIP (AMD) | `llama-{latest-release}-bin-win-hip-radeon-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-
-### What's Included
-
-Each download contains:
-- `llama-cli` - Inference and interactive chat
-- `llama-finetune-lora` - LoRA fine-tuning binary
-- `llama-quantize` - Model quantization tool
-- `llama-perplexity` - Model evaluation (KL divergence, perplexity)
-- Required libraries (GGML, Vulkan/Metal backends)
-
-**[All Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
-
----
 
 ## Performance Benchmarks
 
