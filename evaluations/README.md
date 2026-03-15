@@ -239,7 +239,6 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 ./llama-finetune-lora \
   -m models/bitnet-xl.tq2_0.gguf \
   -f evaluations/biomedqa_data/train.jsonl \
-  --assistant-loss-only \
   -c 128 -b 128 -ub 128 -ngl 999 --flash-attn off \
   --num-epochs 8 \
   --output-adapter biomedical_adapter.gguf
