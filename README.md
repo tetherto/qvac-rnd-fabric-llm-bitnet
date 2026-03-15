@@ -153,6 +153,8 @@ Convert BitNet checkpoints to GGUF format with TQ2_0 or TQ1_0 quantization:
 git clone https://github.com/tetherto/qvac-fabric-llm.cpp/
 cd qvac-fabric-llm.cpp
 
+pip install ./gguf-py/ -r requirements/requirements-convert_hf_to_gguf.txt
+
 # TQ1
 python3 convert_hf_to_gguf.py "/path/to/bitnet-b1.58-checkpoint" --outtype tq1_0 --outfile output.gguf
 
