@@ -101,7 +101,7 @@ def find_adapter_paths(run_dir):
 
 def main():
     parser = argparse.ArgumentParser(description="Compare base model with fine-tuned adapters")
-    parser.add_argument("--run_dir", default="/root/qvac-model-tools/qwen3-finetune/runs/20250911_084818",
+    parser.add_argument("--run_dir",
                         help="Directory containing the adapter runs")
     parser.add_argument("--model_id", default="Qwen/Qwen3-1.7B-Base", 
                         help="Base model ID")

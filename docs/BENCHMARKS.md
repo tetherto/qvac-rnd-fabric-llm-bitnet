@@ -132,22 +132,6 @@ Official microsoft/bitnet-b1.58 models performance:
 | **7B** | 15m 40s | OOM | OOM | 33m 58s | 11h 53m |
 | **13B** | 26m 21s | OOM | OOM | 59m 58s | 22h 03m |
 
----
-
-### FP16 LoRA Fine-tuning (Time per Epoch)
-
-Baseline comparison with FP16 models:
-
-| Model | NVIDIA 4090 | Pixel 9 Mali GPU | S25 Adreno GPU | macOS M3 GPU | iPhone 16 GPU |
-|-------|-------------|------------------|----------------|--------------|---------------|
-| **125M** | 1m 01s | 16m 00s | 10m 00s | 4m 49s | 9m 27s |
-| **350M** | 2m 10s | 45m 00s | 30m 00s | 6m 59s | 38m 07s |
-| **1B** | 3m 20s | 1h 50m | 1h 01m | 8m 50s | 1h 39m |
-| **1.5B** | 5m 40s | 2h 40m | 1h 41m | 10m 06s | 2h 12m |
-| **2.7B** | 6m 20s | 4h 30m | OOM | 11m 11s | 3h 53m |
-| **3.8B** | 8m 20s | OOM | OOM | 18m 13s | 5h 57m |
-| **7B** | 15m 40s | OOM | OOM | 33m 58s | 11h 53m |
-| **13B** | 26m 21s | OOM | OOM | 59m 58s | 22h 03m |
 
 ---
 

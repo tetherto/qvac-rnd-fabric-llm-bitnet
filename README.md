@@ -32,7 +32,7 @@
 
 * The BitNet architecture implementation demonstrates the capability to fine-tune models that are ~2 times larger on edge devices compared to Q4 non-BitNet models, showcasing the memory advantage of the BitNet architecture.
     
-* It was also demonsrated that inference of a Bitnet model is significantly faster, ranging from **2.1 to 11.3 times**, on **edge GPUs compared to CPUs** across leading flagship devices, including the Samsung S25, Google Pixel 9, and iPhone 16.
+* It was also demonstrated that inference of a BitNet model is significantly faster, ranging from **2.1 to 11.3 times**, on **edge GPUs compared to CPUs** across leading flagship devices, including the Samsung S25, Google Pixel 9, and iPhone 16.
     
 * Our benchmark shows that the BitNet-1B model uses up to 77.8% less VRAM than Gemma-3-1B (F16) and 65.6% less VRAM than Qwen3-0.6B (F16). This substantial reduction in memory usage makes it significantly more feasible to deploy larger models on memory-constrained edge devices. Further reinforcing this advantage, despite having **3.25 times** more parameters **(13B vs. 4B)**, **BitNet-13B** uses 29% less VRAM (2,789 MB) than a 4-bit quantized Qwen3-4B (Q4) model. This breakthrough enables **13B-scale models to run on edge hardware** that previously struggled with 4B quantized models without the need for additional memory or hardware upgrades.
 
@@ -106,7 +106,7 @@ qvac-fabric-llm-bitnet-finetune/
 │   │   ├── monitor_training.py
 │   │   ├── quick_compare.py
 │   │   ├── test_biomed_prompts.py
-│   │   └── build_biomed_yn_dataset.py
+│   │   └── build_biomed_dataset.py
 │   │
 │   └── reports/                   # Experimental Results
 │       ├── BIOMED_FINETUNING_REPORT.md
@@ -160,7 +160,7 @@ Please download the latest binaries from the release page.
 # Artifact: llama-{latest-release}-bin-android.zip
 
 # Set library path
-export LD_LIBRARY_PATH= "YOUR LD LIBRARY PATH"
+export LD_LIBRARY_PATH="YOUR LD LIBRARY PATH"
 
 # Download BitNet model
 mkdir -p models
@@ -168,7 +168,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
   -O models/bitnet-xl.tq2_0.gguf
 
 # Run inference
-./bin/llama-cli \
+./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 99 -s 42 -c 512 --flash-attn off \
   -p "Explain the BitNet architecture in one paragraph." \
@@ -197,7 +197,7 @@ curl -L https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bit
   -o models/bitnet-xl.tq2_0.gguf
 
 # Run inference
-./bin/llama-cli \
+./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
   -p "What are the advantages of 1-bit neural networks?" \
@@ -221,7 +221,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
   -O models/bitnet-xl.tq2_0.gguf
 
 # Run inference
-./bin/llama-cli \
+./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
   -p "Describe quantum computing in simple terms." \
@@ -245,7 +245,7 @@ curl.exe -L -o models/bitnet-xl.tq2_0.gguf ^
   https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf
 
 # Run inference
-.\bin\llama-cli.exe ^
+.\llama-cli.exe ^
   -m models\bitnet-xl.tq2_0.gguf ^
   -ngl 999 -c 512 --flash-attn off ^
   -p "Describe quantum computing in simple terms." ^
@@ -268,12 +268,12 @@ Pre-built binaries from [qvac-fabric-llm.cpp/releases](https://github.com/tether
 | macOS | Apple Silicon | `llama-{latest-release}-bin-macos-arm64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
 | macOS | Intel | `llama-{latest-release}-bin-macos-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
 | iOS | A-series | `llama-{latest-release}-xcframework.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Linux | Vulkan | `llama-{latest-release}-bin-ubuntu-x64-vulkan.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Linux | Vulkan | `llama-{latest-release}-bin-ubuntu-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
 | Linux | CPU | `llama-{latest-release}-bin-ubuntu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
 | Windows | Vulkan | `llama-{latest-release}-bin-win-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | CPU | `llama-{latest-release}-bin-win-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | CPU | `llama-{latest-release}-bin-win-cpu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
 | Windows | SYCL (Intel) | `llama-{latest-release}-bin-win-sycl-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | HIP (AMD) | `llama-{latest-release}-bin-win-hip-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | HIP (AMD) | `llama-{latest-release}-bin-win-hip-radeon-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
 
 ### What's Included
 
@@ -282,7 +282,6 @@ Each download contains:
 - `llama-finetune-lora` - LoRA fine-tuning binary
 - `llama-quantize` - Model quantization tool
 - `llama-perplexity` - Model evaluation (KL divergence, perplexity)
-- `llama-export-lora` - Export/merge LoRA adapters
 - Required libraries (GGML, Vulkan/Metal backends)
 
 **[All Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
@@ -335,14 +334,14 @@ BitNet-2B vs Qwen3-1.7B (Q4): **60-64% win rate** for BitNet across all platform
 
 ```bash
 # TQ1_0 format (faster, ~1.0 bpw)
-./bin/llama-cli \
+./llama-cli \
   -m models/bitnet-3b.tq1_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
   -p "Explain machine learning to a 10-year-old." \
   -n 256
 
 # TQ2_0 format (better numerical stability, ~2.0 bpw)
-./bin/llama-cli \
+./llama-cli \
   -m models/bitnet-3b.tq2_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
   -p "What is the capital of France?" \
@@ -353,7 +352,7 @@ BitNet-2B vs Qwen3-1.7B (Q4): **60-64% win rate** for BitNet across all platform
 
 ```bash
 # Basic LoRA training on BitNet model
-./bin/llama-finetune-lora \
+./llama-finetune-lora \
   -m models/bitnet-1b.tq2_0.gguf \
   -f train.jsonl \
   --output-adapter bitnet-lora-adapter.gguf \
@@ -362,7 +361,7 @@ BitNet-2B vs Qwen3-1.7B (Q4): **60-64% win rate** for BitNet across all platform
   --num-epochs 8
 
 # Advanced LoRA with instruction-tuning
-./bin/llama-finetune-lora \
+./llama-finetune-lora \
   -m models/bitnet-1b.tq2_0.gguf \
   -f conversations.jsonl \
   --output-adapter bitnet-instruct-adapter.gguf \
@@ -379,7 +378,7 @@ BitNet-2B vs Qwen3-1.7B (Q4): **60-64% win rate** for BitNet across all platform
 
 ```bash
 # Save checkpoints every 50 steps
-./bin/llama-finetune-lora \
+./llama-finetune-lora \
   -m models/bitnet-1b.tq2_0.gguf \
   -f train.jsonl \
   --checkpoint-save-steps 50 \
@@ -387,7 +386,7 @@ BitNet-2B vs Qwen3-1.7B (Q4): **60-64% win rate** for BitNet across all platform
   -ngl 999
 
 # Resume from checkpoint
-./bin/llama-finetune-lora \
+./llama-finetune-lora \
   -m models/bitnet-1b.tq2_0.gguf \
   -f train.jsonl \
   --resume-from "./lora_checkpoints/checkpoint_step_00000150/" \
@@ -399,7 +398,7 @@ BitNet-2B vs Qwen3-1.7B (Q4): **60-64% win rate** for BitNet across all platform
 
 ```bash
 # Inference with LoRA adapter
-./bin/llama-cli \
+./llama-cli \
   -m models/bitnet-1b.tq2_0.gguf \
   --lora bitnet-lora-adapter.gguf \
   -ngl 999 --flash-attn off \
@@ -411,7 +410,7 @@ BitNet-2B vs Qwen3-1.7B (Q4): **60-64% win rate** for BitNet across all platform
 
 ```bash
 # Evaluate model quality with KL divergence
-./bin/llama-perplexity \
+./llama-perplexity \
   -m models/bitnet-1b.tq2_0.gguf \
   -f test_corpus.txt \
   -ngl 999 --flash-attn off

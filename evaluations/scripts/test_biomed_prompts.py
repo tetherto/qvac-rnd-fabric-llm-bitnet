@@ -89,7 +89,7 @@ def main():
     base_model, base_tokenizer = load_base_model()
     
     print("Loading fine-tuned model (LoRA r=16)...")
-    adapter_path = "runs/biomed_yesno_20250915_150429/run_gpu2_lora_r16/final_adapter"
+    adapter_path = ""
     try:
         finetuned_model, finetuned_tokenizer = load_finetuned_model(adapter_path)
         print("✅ Fine-tuned model loaded successfully")

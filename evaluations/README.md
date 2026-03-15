@@ -8,7 +8,7 @@ This directory contains datasets, evaluation scripts, and comprehensive reports 
 
 ### 1. Biomedical Question-Answering
 
-**Location:** `./biomedical_qa/`
+**Location:** `./biomedical_qa_data/`
 
 **Purpose:** Domain-specific instruction fine-tuning for medical/scientific knowledge
 ```
@@ -91,7 +91,7 @@ Compares base model performance against fine-tuned LoRA adapters.
 python scripts/compare_base_vs_adapters.py \
   --base-model models/base.gguf \
   --adapter models/lora_adapter.gguf \
-  --test-data biomedical_qa/test.jsonl \
+  --test-data biomedical_qa_data/test.jsonl \
   --output results.json
 ```
 
@@ -112,7 +112,7 @@ Tests fine-tuned models on biomedical prompts with ground truth validation.
 python scripts/test_biomed_prompts.py \
   --model models/base.gguf \
   --adapter models/lora_adapter.gguf \
-  --dataset biomedical_qa/test.jsonl \
+  --dataset biomedical_qa_data/test.jsonl \
   --num-samples 100
 ```
 
@@ -236,9 +236,9 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
   -O models/bitnet-xl.tq2_0.gguf
 
 # Fine-tune on biomedical dataset
-./bin/llama-finetune-lora \
+./llama-finetune-lora \
   -m models/bitnet-xl.tq2_0.gguf \
-  -f evaluations/biomedical_qa/train.jsonl \
+  -f evaluations/biomedical_qa_data/train.jsonl \
   --assistant-loss-only \
   -c 128 -b 128 -ub 128 -ngl 999 --flash-attn off \
   --num-epochs 8 \
@@ -248,14 +248,14 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 python evaluations/scripts/test_biomed_prompts.py \
   --model models/bitnet-xl.tq2_0.gguf \
   --adapter biomedical_adapter.gguf \
-  --dataset evaluations/biomedical_qa/validation.jsonl
+  --dataset evaluations/biomedical_qa_data/validation.jsonl
 ```
 
 ### Run Email Style Transfer
 
 ```bash
 # Fine-tune on email dataset
-./bin/llama-finetune-lora \
+./llama-finetune-lora \
   -m models/bitnet-xl.tq2_0.gguf \
   -f evaluations/email_style_transfer/email_dataset.jsonl \
   -c 512 -b 128 -ub 128 -ngl 999 --flash-attn off \
@@ -264,7 +264,7 @@ python evaluations/scripts/test_biomed_prompts.py \
   --output-adapter email_adapter.gguf
 
 # Test style transfer
-./bin/llama-cli \
+./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   --lora email_adapter.gguf \
   -ngl 999 --flash-attn off \
@@ -307,12 +307,12 @@ python evaluations/scripts/test_biomed_prompts.py \
 
 2. **Run Fine-tuning**
    ```bash
-   ./bin/llama-finetune-lora -m model.gguf -f test_dataset.jsonl [options]
+   ./llama-finetune-lora -m model.gguf -f test_dataset.jsonl [options]
    ```
 
 3. **Evaluate Results**
    ```bash
-   python evaluation/scripts/test_biomed_prompts.py --model model.gguf --adapter adapter.gguf
+   python evaluations/scripts/test_biomed_prompts.py --model model.gguf --adapter adapter.gguf
    ```
 
 4. **Document Findings**
@@ -367,7 +367,7 @@ We welcome evaluation contributions!
 ## 📄 License
 
 - **Biomedical Dataset**: MIT (PubMedQA-derived)
-- **Email Dataset**: Internal research use
+- **Email Dataset**: Apache 2.0
 - **Scripts**: MIT License
 
 ---

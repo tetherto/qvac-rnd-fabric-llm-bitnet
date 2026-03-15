@@ -79,7 +79,7 @@ Synthetic personal email dataset for demonstrating style transfer fine-tuning wi
 
 **Training:**
 ```bash
-./bin/llama-finetune-lora \
+./llama-finetune-lora \
   -m models/bitnet-xl.tq2_0.gguf \
   -f evaluations/email_style_transfer/email_dataset.jsonl \
   -c 512 -b 128 -ub 128 -ngl 999 \
@@ -374,7 +374,7 @@ To expand the dataset, you can:
 
 ```bash
 # 1. Fine-tune BitNet model on email style
-./bin/llama-finetune-lora \
+./llama-finetune-lora \
   -m models/bitnet-xl.tq2_0.gguf \
   -f evaluations/email_style_transfer/email_dataset.jsonl \
   -c 512 -b 128 -ub 128 -ngl 999 \
@@ -385,7 +385,7 @@ To expand the dataset, you can:
   --output-adapter email_style_adapter.gguf
 
 # 2. Test basic email generation
-./bin/llama-cli \
+./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   --lora email_style_adapter.gguf \
   -ngl 999 --flash-attn off \
@@ -393,7 +393,7 @@ To expand the dataset, you can:
   --temp 0.7
 
 # 3. Test specific formatting
-./bin/llama-cli \
+./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
   --lora email_style_adapter.gguf \
   -ngl 999 --flash-attn off \

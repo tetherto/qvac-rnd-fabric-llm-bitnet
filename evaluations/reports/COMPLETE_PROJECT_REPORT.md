@@ -392,8 +392,7 @@ response = model.generate(tokenizer(prompt, return_tensors="pt"))
 **The model is ready for deployment in clinical decision support applications where concise, trustworthy biomedical reasoning is required.**
 
 ---
-
-*Report compiled on September 15, 2024*  
+ 
 *Total project duration: 4 hours (dataset creation + training + evaluation)*  
 *Best model: LoRA rank 16 adapter (75.76% accuracy)*
 

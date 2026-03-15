@@ -51,7 +51,7 @@ def generate_response(model, tokenizer, prompt, max_new_tokens=150):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--question", required=True, help="Question to ask all models")
-    parser.add_argument("--run_dir", default="/root/qvac-model-tools/qwen3-finetune/runs/20250911_084818")
+    parser.add_argument("--run_dir")
     parser.add_argument("--max_tokens", type=int, default=150)
     
     args = parser.parse_args()

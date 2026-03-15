@@ -16,12 +16,12 @@ which can be downloaded from [qvac-fabric-llm.cpp/releases](https://github.com/t
 | macOS | ARM64 (Apple Silicon) | Metal | `llama-{latest-release}-bin-macos-arm64.zip` |
 | macOS | x64 (Intel) | Metal | `llama-{latest-release}-bin-macos-x64.zip` |
 | Linux | x64 | CPU | `llama-{latest-release}-bin-ubuntu-x64.zip` |
-| Linux | x64 | Vulkan | `llama-{latest-release}-bin-ubuntu-x64-vulkan.zip` |
-| Windows | x64 | CPU | `llama-{latest-release}-bin-win-x64.zip` |
+| Linux | x64 | Vulkan | `llama-{latest-release}-bin-ubuntu-vulkan-x64.zip` |
+| Windows | x64 | CPU | `llama-{latest-release}-bin-win-cpu-x64.zip` |
 | Windows | ARM64 | CPU | `llama-{latest-release}-bin-win-arm64.zip` |
 | Windows | x64 | Vulkan | `llama-{latest-release}-bin-win-vulkan-x64.zip` |
 | Windows | x64 | SYCL (Intel) | `llama-{latest-release}-bin-win-sycl-x64.zip` |
-| Windows | x64 | HIP (AMD) | `llama-{latest-release}-bin-win-hip-x64.zip` |
+| Windows | x64 | HIP (AMD) | `llama-{latest-release}-bin-win-hip-radeon-x64.zip` |
 
 ---
 
@@ -62,7 +62,7 @@ pkg update && pkg install wget unzip
 export LD_LIBRARY_PATH=.
 
 # Test installation
-./bin/llama-cli --version
+./llama-cli --version
 ```
 
 **Requirements:**
@@ -87,14 +87,14 @@ export LD_LIBRARY_PATH=.
 xattr -cr .
 
 # Test installation
-./bin/llama-cli --version
+./llama-cli --version
 ```
 
 **Requirements:**
 - macOS 13.0+ (Ventura or newer)
 - Xcode Command Line Tools
 - For Apple Silicon: M1 or newer
-- For Intel: use `llama-b7335-bin-macos-x64.zip`
+- For Intel: use `llama-{latest-release}-bin-macos-x64.zip`
 
 **Performance Notes:**
 - **Apple M3 Pro:** 33-386 tok/s (TQ1_0), 6-124 tok/s (TQ2_0)
@@ -106,7 +106,7 @@ xattr -cr .
 
 ### iOS
 
-# Download the iOS binary from GitHub Releases
+Download the iOS binary from GitHub Releases
 
 
 **Requirements:**
@@ -128,7 +128,7 @@ xattr -cr .
 # Download the Linux Vulkan binaries from GitHub Releases
 
 # Test installation
-./bin/llama-cli --version
+./llama-cli --version
 
 # Verify Vulkan
 vulkaninfo | head -20
@@ -164,15 +164,15 @@ sudo apt install intel-media-va-driver mesa-vulkan-drivers
 
 ```powershell
 # Download from GitHub Releases (use browser or PowerShell)
-# Vulkan: llama-b7335-bin-win-vulkan-x64.zip
-# CPU: llama-b7335-bin-win-x64.zip
-# SYCL (Intel): llama-b7335-bin-win-sycl-x64.zip
-# HIP (AMD): llama-b7335-bin-win-hip-x64.zip
+# Vulkan: llama-{latest-release}-bin-win-vulkan-x64.zip
+# CPU: llama-{latest-release}-bin-win-cpu-x64.zip
+# SYCL (Intel): llama-{latest-release}-bin-win-sycl-x64.zip
+# HIP (AMD): llama-{latest-release}-bin-win-hip-radeon-x64.zip
 
 # Extract and run
-Expand-Archive llama-b7335-bin-win-vulkan-x64.zip -DestinationPath .
-cd llama-b7335-bin-win-vulkan-x64
-.\bin\llama-cli.exe --version
+Expand-Archive llama-{latest-release}-bin-win-vulkan-x64.zip -DestinationPath .
+cd llama-{latest-release}-bin-win-vulkan-x64
+.\llama-cli.exe --version
 ```
 
 ---
@@ -187,7 +187,6 @@ Each release package contains:
 | `llama-finetune-lora` | LoRA adapter fine-tuning |
 | `llama-quantize` | Model quantization (convert to TQ1_0/TQ2_0) |
 | `llama-perplexity` | Model evaluation (perplexity, KL divergence) |
-| `llama-export-lora` | Export/merge LoRA adapters |
 | `libggml.*` | GGML tensor library |
 | `libllama.*` | LLaMA inference library |
 
