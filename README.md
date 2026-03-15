@@ -260,8 +260,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 
 # Download BitNet model
 mkdir models
-curl.exe -L -o models/bitnet-xl.tq2_0.gguf ^
-  https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf
+curl.exe -L -o models/bitnet-xl.tq2_0.gguf https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf
 
 # Run inference
 .\llama-cli.exe -m models\bitnet-xl.tq2_0.gguf -ngl 999 -c 512 --flash-attn off -p "Large language models are transforming the field of artificial intelligence by" -n 256
