@@ -131,6 +131,14 @@ qvac-fabric-llm-bitnet-finetune/
 
 ## Quick Start
 
+### Prerequisites
+Before building from source, ensure you have the following installed on your system:
+* **CMake:** Required to configure the build. Download it from [https://cmake.org/download/](https://cmake.org/download/).
+* **Vulkan SDK:** Required for the `-DLLAMA_VULKAN=ON` flag. Download it from the [LunarG Vulkan SDK page](https://vulkan.lunarg.com/).
+* **Windows Users:** You will also need a C++ compiler. The easiest way is to install [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/) (or Build Tools) and ensure the **"Desktop development with C++"** workload is selected during installation.
+
+---
+
 ### Building from Source
 
 ```bash
@@ -143,6 +151,9 @@ cmake -B build -DLLAMA_VULKAN=ON -DLLAMA_CUDA=OFF -DLLAMA_METAL=OFF
 
 # 3. Build
 cmake --build build -j
+
+# 3.1 Build for Windows
+cmake --build build --config Release -j
 ```
 
 
@@ -155,10 +166,10 @@ cmake --build build -j
 Please download the latest binaries from the release page.
 
 ```bash
-# Download Android build from GitHub Releases
+# Download Android build from GitHub Releases and unzip it.
 # Artifact: llama-{latest-release}-bin-android.zip
 
-# Set library path
+# Set your correct LD library path
 export LD_LIBRARY_PATH="YOUR LD LIBRARY PATH"
 
 # Download BitNet model
@@ -179,22 +190,24 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 </details>
 
 <details>
-<summary><b> iOS (iPhone/iPad)</b></summary>
+<summary><b>iOS (iPhone/iPad)</b></summary>
 
-```bash
+1. **Download** the iOS xcframework from [GitHub Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)
+   - Artifact: `llama-{latest-release}-xcframework.zip`
 
-# Download macOS Apple Silicon build from GitHub Releases
-# Artifact: llama-{latest-release}-xcframework.zip
+2. **Open** the SwiftUI example project in Xcode
+   ```
+   qvac-fabric-llm.cpp/examples/llama.swiftui/llama.swiftui.xcodeproj
+   ```
 
-# To test on a real iPad/iPhone:
-cd qvac-fabric-llm.cpp/examples/llama.swiftui/llama.swiftui.xcodeproj
+3. **Set** your Apple Developer team in *Signing & Capabilities*
 
-# Open llama.swiftui.xcodeproj in Xcode
-# Set your Apple Developer team
-Build & run on device
-Load a model + adapter from the app's UI
+4. **Build & run** on your iPhone or iPad
 
-```
+5. **Load** a BitNet model + LoRA adapter from the app's UI
+
+**[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
+
 </details>
 
 
@@ -204,7 +217,7 @@ Load a model + adapter from the app's UI
 Please download the latest binaries from the release page.
 
 ```bash
-# Download macOS Apple Silicon build from GitHub Releases
+# Download macOS Apple Silicon build from GitHub Releases and unzip it.
 # Artifact: llama-{latest-release}-bin-macos-arm64.zip
 
 # Remove quarantine (if needed)
@@ -231,7 +244,7 @@ curl -L https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bit
 <summary><b>Linux (NVIDIA/AMD/Intel)</b></summary>
 
 ```bash
-# Download Linux Vulkan build from GitHub Releases
+# Download Linux Vulkan build from GitHub Releases and unzip it.
 # Artifact: llama-{latest-release}-bin-ubuntu-vulkan-x64.zip
 
 # Download BitNet model
@@ -255,7 +268,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 <summary><b>Windows (NVIDIA/AMD/Intel)</b></summary>
 
 ```powershell
-# Download Windows Vulkan build from GitHub Releases
+# Download Windows Vulkan build from GitHub Releases and unzip it
 # Artifact: llama-{latest-release}-bin-win-vulkan-x64.zip
 
 # Download BitNet model
@@ -263,7 +276,11 @@ mkdir models
 curl.exe -L -o models/bitnet-xl.tq2_0.gguf https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM-bitnet_b1_58-xl-tq2_0.gguf
 
 # Run inference
-.\llama-cli.exe -m models\bitnet-xl.tq2_0.gguf -ngl 999 -c 512 --flash-attn off -p "Large language models are transforming the field of artificial intelligence by" -n 256
+.\llama-cli.exe `
+  -m models\bitnet-xl.tq2_0.gguf `
+  -ngl 999 -c 512 --flash-attn off `
+  -p "Large language models are transforming the field of artificial intelligence by" `
+  -n 256
 ```
 
 **[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
