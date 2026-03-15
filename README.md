@@ -93,7 +93,7 @@ This repository contains the research artifacts, benchmarks, and datasets for ou
 ```
 qvac-fabric-llm-bitnet-finetune/
 ├── README.md                      # This file - main documentation
-├── LICENSE.txt         # Apache 2.0 License
+├── LICENSE         # Apache 2.0 License
 │
 ├── docs/                          # Research Documentation
 │   └── BENCHMARKS.md              # Comprehensive performance metrics
