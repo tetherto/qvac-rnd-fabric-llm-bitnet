@@ -218,7 +218,7 @@ curl -L https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bit
 
 ./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
-  -ngl 999 -c 512 --flash-attn off \
+  -ngl 0 -c 512 --flash-attn off \
   -p "The main advantages of 1-bit neural networks include" \
   -n 256
 
@@ -226,7 +226,7 @@ curl -L https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bit
 
 .build/bin/llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
-  -ngl 999 -c 512 --flash-attn off \
+  -ngl 0 -c 512 --flash-attn off \
   -p "The main advantages of 1-bit neural networks include" \
   -n 256
 ```
@@ -349,8 +349,11 @@ Before building from source, ensure you have the following installed on your sys
 git clone https://github.com/tetherto/qvac-fabric-llm.cpp/
 cd qvac-fabric-llm.cpp
 
-# 2. Configure with Vulkan enabled
+# 2. Configure with Vulkan enabled (Non Apple Silicon)
 cmake -B build -DLLAMA_VULKAN=ON -DLLAMA_CUDA=OFF -DLLAMA_METAL=OFF
+
+# 2.1 Configure with Metal enabled (Apple)
+cmake -B build -DLLAMA_VULKAN=OFF -DLLAMA_CUDA=OFF -DLLAMA_METAL=ON
 
 # 3. Build
 cmake --build build -j
