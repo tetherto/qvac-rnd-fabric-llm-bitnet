@@ -56,10 +56,7 @@ which can be downloaded from [qvac-fabric-llm.cpp/releases](https://github.com/t
 # In Termux
 pkg update && pkg install wget unzip
 
-# Download from GitHub Releases
-wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7335/llama-b7335-bin-android.zip
-unzip llama-b7335-bin-android.zip
-cd llama-b7335-bin-android
+# Download the Android Binary from GitHub Releases and unzip it 
 
 # Set library path (required)
 export LD_LIBRARY_PATH=.
@@ -84,10 +81,7 @@ export LD_LIBRARY_PATH=.
 ### macOS (Apple Silicon)
 
 ```bash
-# Download from GitHub Releases
-curl -LO https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7335/llama-b7335-bin-macos-arm64.zip
-unzip llama-b7335-bin-macos-arm64.zip
-cd llama-b7335-bin-macos-arm64
+# Download the macOS binary from GitHub Releases
 
 # Remove quarantine (if needed)
 xattr -cr .
@@ -112,11 +106,8 @@ xattr -cr .
 
 ### iOS
 
-```bash
-# Download from GitHub Releases
-curl -LO https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7335/llama-b7335-xcframework.zip
-unzip llama-b7335-xcframework.zip
-```
+# Download the iOS binary from GitHub Releases
+
 
 **Requirements:**
 - iOS 16+
@@ -134,10 +125,7 @@ unzip llama-b7335-xcframework.zip
 ### Linux (Vulkan)
 
 ```bash
-# Download from GitHub Releases
-wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7335/llama-b7335-bin-ubuntu-x64-vulkan.zip
-unzip llama-b7335-bin-ubuntu-x64-vulkan.zip
-cd llama-b7335-bin-ubuntu-x64-vulkan
+# Download the Linux Vulkan binaries from GitHub Releases
 
 # Test installation
 ./bin/llama-cli --version
