@@ -150,9 +150,19 @@ cmake --build build -j
 Convert BitNet checkpoints to GGUF format with TQ2_0 or TQ1_0 quantization:
 
 ```bash
-python3 scripts/convert-bitnet-to-gguf.py \
-  --input /path/to/bitnet-b1.58-checkpoint \
-  --output models/bitnet-b1_58-3b.tq2_0.gguf
+git clone https://github.com/tetherto/qvac-fabric-llm.cpp/
+cd qvac-fabric-llm.cpp
+
+# TQ1
+python3 convert_hf_to_gguf.py "/path/to/bitnet-b1.58-checkpoint" --outtype tq1_0 --outfile output.gguf
+
+# TQ2
+python3 convert_hf_to_gguf.py "/path/to/bitnet-b1.58-checkpoint" --outtype tq2_0 --outfile output.gguf
+
+# F32
+python3 convert_hf_to_gguf.py "/path/to/bitnet-b1.58-checkpoint" --outtype f32 --outfile output.gguf
+
+
 ```
 
 ### Choose Your Platform
