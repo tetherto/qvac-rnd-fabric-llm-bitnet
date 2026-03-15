@@ -93,7 +93,7 @@ This repository contains the research artifacts, benchmarks, and datasets for ou
 ```
 qvac-fabric-llm-bitnet-finetune/
 ├── README.md                      # This file - main documentation
-├── Apache-LICENSE-2.0.txt         # Apache 2.0 License
+├── LICENSE.txt         # Apache 2.0 License
 │
 ├── docs/                          # Research Documentation
 │   └── BENCHMARKS.md              # Comprehensive performance metrics
@@ -370,7 +370,7 @@ Each download contains:
 
 ## Building from Source
 
-he source code lives in the **[qvac-fabric-llm.cpp](https://github.com/tetherto/qvac-fabric-llm.cpp)** repository.
+The source code lives in the **[qvac-fabric-llm.cpp](https://github.com/tetherto/qvac-fabric-llm.cpp)** repository.
 
 ### Prerequisites
 Before building from source, ensure you have the following installed on your system:
