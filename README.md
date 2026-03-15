@@ -76,7 +76,7 @@ This repository contains the implementation and artifacts for our research:
 
 | Task | Location |
 |------|----------|
-| Download binaries | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335) |
+| Download binaries | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
 | Run inference | [Quick Start](#quick-start) |
 | Fine-tune with LoRA | [Usage Examples](#usage-examples) |
 | View benchmarks | [docs/BENCHMARKS.md](./docs/BENCHMARKS.md) |
@@ -118,7 +118,7 @@ qvac-fabric-llm-bitnet-finetune/
     └── README.md                  # Links to GitHub Releases
 ```
 
-> **Pre-built Binaries:** Download from [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335)
+> **Pre-built Binaries:** Download from [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)
 
 ---
 
@@ -176,7 +176,7 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
   -n 128
 ```
 
-**[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335)**
+**[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
 
 </details>
 
@@ -206,7 +206,7 @@ curl -L https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1
   -n 256
 ```
 
-**[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335)**
+**[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
 
 </details>
 
@@ -233,7 +233,7 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
   -n 256
 ```
 
-**[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335)**
+**[All Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
 
 </details>
 
@@ -241,20 +241,20 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
 
 ## Downloads
 
-Pre-built binaries from [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335):
+Pre-built binaries from [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases):
 
 | Platform | Hardware | Artifact | Download |
 |----------|----------|----------|----------|
-| Android | Adreno/Mali | `llama-b7335-bin-android.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335) |
-| macOS | Apple Silicon | `llama-b7335-bin-macos-arm64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335) |
-| macOS | Intel | `llama-b7335-bin-macos-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335) |
-| iOS | A-series | `llama-b7335-xcframework.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335) |
-| Linux | Vulkan | `llama-b7335-bin-ubuntu-x64-vulkan.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335) |
-| Linux | CPU | `llama-b7335-bin-ubuntu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335) |
-| Windows | Vulkan | `llama-b7335-bin-win-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335) |
-| Windows | CPU | `llama-b7335-bin-win-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335) |
-| Windows | SYCL (Intel) | `llama-b7335-bin-win-sycl-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335) |
-| Windows | HIP (AMD) | `llama-b7335-bin-win-hip-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335) |
+| Android | Adreno/Mali | `llama-b7335-bin-android.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| macOS | Apple Silicon | `llama-b7335-bin-macos-arm64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| macOS | Intel | `llama-b7335-bin-macos-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| iOS | A-series | `llama-b7335-xcframework.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Linux | Vulkan | `llama-b7335-bin-ubuntu-x64-vulkan.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Linux | CPU | `llama-b7335-bin-ubuntu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | Vulkan | `llama-b7335-bin-win-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | CPU | `llama-b7335-bin-win-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | SYCL (Intel) | `llama-b7335-bin-win-sycl-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | HIP (AMD) | `llama-b7335-bin-win-hip-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
 
 ### What's Included
 
@@ -266,7 +266,7 @@ Each download contains:
 - `llama-export-lora` - Export/merge LoRA adapters
 - Required libraries (GGML, Vulkan/Metal backends)
 
-**[All Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335)**
+**[All Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)**
 
 ---
 
@@ -495,7 +495,7 @@ Our Vulkan kernels preserve bit-exact equivalence with CPU reference:
 ### Getting Started
 - [Quick Start](#quick-start)
 - [Downloads](#downloads)
-- [GitHub Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335)
+- [GitHub Releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)
 
 ### Benchmarks & Evaluation
 - [Detailed Benchmarks](./docs/BENCHMARKS.md)
@@ -572,7 +572,7 @@ This project is licensed under the Apache 2.0 License.
 ## Links
 
 - [Project Repository](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune)
-- [Release Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases/tag/b7335)
+- [Release Downloads](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)
 - [Issue Tracker](https://github.com/tetherto/qvac-fabric-llm-bitnet-finetune/issues)
 - [Full Documentation](./docs/)
 
