@@ -153,15 +153,14 @@ python3 scripts/convert-bitnet-to-gguf.py \
 <details>
 <summary><b>Android (Termux)</b></summary>
 
+Please download the latest binaries from the release page.
+
 ```bash
 # Download Android build from GitHub Releases
-# Artifact: llama-b7335-bin-android.zip
-wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7335/llama-b7335-bin-android.zip
-unzip llama-b7335-bin-android.zip
-cd llama-b7335-bin-android
+# Artifact: llama-{latest-release}-bin-android.zip
 
 # Set library path
-export LD_LIBRARY_PATH=.
+export LD_LIBRARY_PATH= "YOUR LD LIBRARY PATH"
 
 # Download BitNet model
 mkdir -p models
@@ -183,12 +182,11 @@ wget https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1_58
 <details>
 <summary><b>macOS (Apple Silicon)</b></summary>
 
+Please download the latest binaries from the release page.
+
 ```bash
 # Download macOS Apple Silicon build from GitHub Releases
-# Artifact: llama-b7335-bin-macos-arm64.zip
-curl -LO https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7335/llama-b7335-bin-macos-arm64.zip
-unzip llama-b7335-bin-macos-arm64.zip
-cd llama-b7335-bin-macos-arm64
+# Artifact: llama-{latest-release}-bin-macos-arm64.zip
 
 # Remove quarantine (if needed)
 xattr -cr .
@@ -214,11 +212,8 @@ curl -L https://huggingface.co/1bitLLM/bitnet_b1_58-large/resolve/main/bitnet_b1
 <summary><b>Linux/Windows (NVIDIA/AMD/Intel)</b></summary>
 
 ```bash
-# Download Linux Vulkan build from GitHub Releases
-# Artifact: llama-b7335-bin-ubuntu-x64-vulkan.zip
-wget https://github.com/tetherto/qvac-fabric-llm.cpp/releases/download/b7335/llama-b7335-bin-ubuntu-x64-vulkan.zip
-unzip llama-b7335-bin-ubuntu-x64-vulkan.zip
-cd llama-b7335-bin-ubuntu-x64-vulkan
+# Download Linux/Windows Vulkan build from GitHub Releases
+# Artifact: llama-{latest-release}-bin-ubuntu-vulkan-x64.zip ; llama-{latest-release}-bin-win-vulkan-x64.zip
 
 # Download BitNet model
 mkdir -p models
@@ -245,16 +240,16 @@ Pre-built binaries from [qvac-fabric-llm.cpp/releases](https://github.com/tether
 
 | Platform | Hardware | Artifact | Download |
 |----------|----------|----------|----------|
-| Android | Adreno/Mali | `llama-b7335-bin-android.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| macOS | Apple Silicon | `llama-b7335-bin-macos-arm64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| macOS | Intel | `llama-b7335-bin-macos-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| iOS | A-series | `llama-b7335-xcframework.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Linux | Vulkan | `llama-b7335-bin-ubuntu-x64-vulkan.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Linux | CPU | `llama-b7335-bin-ubuntu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | Vulkan | `llama-b7335-bin-win-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | CPU | `llama-b7335-bin-win-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | SYCL (Intel) | `llama-b7335-bin-win-sycl-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
-| Windows | HIP (AMD) | `llama-b7335-bin-win-hip-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Android | Adreno/Mali | `llama-{latest-release)-bin-android.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| macOS | Apple Silicon | `llama-{latest-release)-bin-macos-arm64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| macOS | Intel | `llama-{latest-release)-bin-macos-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| iOS | A-series | `llama-{latest-release)-xcframework.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Linux | Vulkan | `llama-{latest-release)-bin-ubuntu-x64-vulkan.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Linux | CPU | `llama-{latest-release)-bin-ubuntu-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | Vulkan | `llama-{latest-release)-bin-win-vulkan-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | CPU | `llama-{latest-release)-bin-win-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | SYCL (Intel) | `llama-{latest-release)-bin-win-sycl-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
+| Windows | HIP (AMD) | `llama-{latest-release)-bin-win-hip-x64.zip` | [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases) |
 
 ### What's Included
 
