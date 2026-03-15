@@ -21,6 +21,9 @@
 </p>
 
 ---
+> **About this repository:** This repo contains the **research documentation, benchmarks, datasets, and evaluation scripts** for our BitNet b1.58 work. The actual source code, pre-built binaries, and build instructions live in the companion repo: **[qvac-fabric-llm.cpp](https://github.com/tetherto/qvac-fabric-llm.cpp)**. All code examples below reference that repo.
+
+---
 
 ## What Makes This Different?
 
@@ -49,7 +52,7 @@
 
 ## Research Highlights
 
-This repository contains the implementation and artifacts for our research:
+This repository contains the research artifacts, benchmarks, and datasets for our research (source code is in [qvac-fabric-llm.cpp](https://github.com/tetherto/qvac-fabric-llm.cpp)):
 
 **["LoRA Fine-Tuning BitNet b1.58 LLMs on Heterogeneous Edge GPUs via QVAC Fabric"](https://huggingface.co/blog/qvac/fabric-llm-finetune-bitnet)**
 
@@ -125,8 +128,7 @@ qvac-fabric-llm-bitnet-finetune/
     └── README.md                  # Links to GitHub Releases
 ```
 
-> **Pre-built Binaries:** Download from [qvac-fabric-llm.cpp/releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases)
-
+**Source code & pre-built binaries:** [qvac-fabric-llm.cpp](https://github.com/tetherto/qvac-fabric-llm.cpp) ([releases](https://github.com/tetherto/qvac-fabric-llm.cpp/releases))
 ---
 
 ## Quick Start
@@ -368,7 +370,7 @@ Each download contains:
 
 ## Building from Source
 
-We also Open source the code to let users build the binaries from source.
+he source code lives in the **[qvac-fabric-llm.cpp](https://github.com/tetherto/qvac-fabric-llm.cpp)** repository.
 
 ### Prerequisites
 Before building from source, ensure you have the following installed on your system:
