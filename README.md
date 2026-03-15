@@ -238,7 +238,7 @@ curl -L https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bit
 ## OPTION B: If you built from source yourself using CMake
 
 .build/bin/llama-cli \
-  -m models/bitnet-xl.tq2_0.gguf \
+  -m models/bitnet-xl.tq1_0.gguf \
   -ngl 999 -c 512 --flash-attn off \
   -p "The main advantages of 1-bit neural networks include" \
   -n 256
