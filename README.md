@@ -90,6 +90,7 @@ This repository contains the implementation and artifacts for our research:
 ```
 qvac-fabric-llm-bitnet-finetune/
 ├── README.md                      # This file - main documentation
+├── Apache-LICENSE-2.0.txt         # Apache 2.0 License
 │
 ├── docs/                          # Research Documentation
 │   └── BENCHMARKS.md              # Comprehensive performance metrics
@@ -97,16 +98,22 @@ qvac-fabric-llm-bitnet-finetune/
 ├── evaluations/                   # Datasets, Scripts & Results
 │   ├── README.md                  # Evaluation guide
 │   │
+│   ├── biomedqa_data/             # Biomedical Q&A Dataset
+│   │   ├── train.jsonl            # 264 training examples
+│   │   ├── validation.jsonl       # 33 validation examples
+│   │   ├── test.jsonl             # 33 test examples
+│   │   └── MANIFEST.json          # Dataset metadata
+│   │
 │   ├── email_style_transfer/      # Email Style Transfer Dataset
-│   │   ├── email_dataset.jsonl    # Training examples
+│   │   ├── email_dataset.jsonl    # 200 training examples
 │   │   └── README.md              # Dataset documentation
 │   │
 │   ├── scripts/                   # Python Evaluation Tools
+│   │   ├── build_biomed_dataset.py
 │   │   ├── compare_base_vs_adapters.py
 │   │   ├── monitor_training.py
 │   │   ├── quick_compare.py
-│   │   ├── test_biomed_prompts.py
-│   │   └── build_biomed_dataset.py
+│   │   └── test_biomed_prompts.py
 │   │
 │   └── reports/                   # Experimental Results
 │       ├── BIOMED_FINETUNING_REPORT.md
