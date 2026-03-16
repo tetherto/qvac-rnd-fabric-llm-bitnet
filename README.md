@@ -160,7 +160,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 
 ./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
-  -ngl 99 -s 42 -c 512 --flash-attn off \
+  -ngl 999 -s 42 -c 512 --flash-attn off \
   -p "BitNet is a neural network architecture that uses ternary weights" \
   -n 128
 
@@ -168,7 +168,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 
 .build/bin/llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
-  -ngl 99 -s 42 -c 512 --flash-attn off \
+  -ngl 999 -s 42 -c 512 --flash-attn off \
   -p "BitNet is a neural network architecture that uses ternary weights" \
   -n 128
 ```
@@ -282,7 +282,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 
 ./llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
-  -ngl 99 -s 42 -c 512 --flash-attn off \
+  -ngl 999 -s 42 -c 512 --flash-attn off \
   -p "BitNet is a neural network architecture that uses ternary weights" \
   -n 128
 
@@ -290,7 +290,7 @@ wget https://huggingface.co/qvac/fabric-llm-finetune-bitnet/resolve/main/1bitLLM
 
 .build/bin/llama-cli \
   -m models/bitnet-xl.tq2_0.gguf \
-  -ngl 99 -s 42 -c 512 --flash-attn off \
+  -ngl 999 -s 42 -c 512 --flash-attn off \
   -p "BitNet is a neural network architecture that uses ternary weights" \
   -n 128
 ```
