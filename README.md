@@ -135,6 +135,12 @@ qvac-fabric-llm-bitnet-finetune/
 
 We release platform specific pre-compiled binaries that allow users to run BitNet inference and Finetuning without the hassle of compiling them. 
 
+### ⚠️ Important Disclaimer
+
+> **We provide TQ1_0 and TQ2_0 models quantized from the [1bitllm paper](https://arxiv.org/abs/2402.17764) which is a base model trained only on 100B tokens. Other models can be found [here](https://huggingface.co/1bitLLM)**
+>This is a base model and not fine-tuned for general instructions.
+>We release [biomed fine-tuned adapters](https://huggingface.co/qvac/fabric-llm-finetune-bitnet) to demonstrate feasability which was finetuned on ~300 samples on an Adreno 830 GPu.  
+> **This model and adapters are research artifacts and must NOT be used for actual medical diagnosis, treatment decisions, or clinical advice.** The outputs may contain inaccuracies, hallucinations, or contradictory statements. Always consult qualified healthcare professionals for medical guidance.
 
 
 ### Choose Your Platform
